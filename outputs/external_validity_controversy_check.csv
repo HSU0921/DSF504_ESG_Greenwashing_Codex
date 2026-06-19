@@ -1,0 +1,20 @@
+company,symbol,sector,model_risk_score,real_world_controversy,controversy_type,evidence_summary,source,year,match
+Amazon.com Inc,AMZN,Consumer Cyclical,0.9999614135431794,High,environmental,"Climate Pledge criticized as greenwashing; emissions up ~40%; Shipment Zero dropped",TBD,TBD,Yes
+"Tesla, Inc.",TSLA,Consumer Cyclical,0.9999982906493644,High,environmental-social,"Removed from S&P 500 ESG Index 2022; exaggerated environmental claims",TBD,TBD,Yes
+Wynn Resorts Ltd,WYNN,Consumer Cyclical,0.999998393743736,None,-,"Only self-published ESG report; no public controversy found",TBD,TBD,No
+Chevron Corporation,CVX,Energy,0.9999992481007371,High,environmental-regulatory,"FTC greenwashing complaint, first against an oil major (2021)",TBD,TBD,Yes
+"Assurant, Inc.",AIZ,Financial Services,0.999956487193504,None,-,"No public controversy found",TBD,TBD,No
+Chubb Limited,CB,Financial Services,0.9998630185544448,High,environmental-governance,"Broke coal-underwriting pledge, reinsured Vietnam coal plant",TBD,TBD,Yes
+M&t Bank Corp.,MTB,Financial Services,0.9999990736311402,None,-,"Only self-published ESG report",TBD,TBD,No
+Pnc Financial Services Group,PNC,Financial Services,0.9999902590513284,High,environmental,"~$108B fossil-fuel financing vs sustainable image; shareholder proposals",TBD,TBD,Yes
+Wells Fargo & Co.,WFC,Financial Services,0.9999913568855464,High,environmental-social,"Fossil-fuel financing greenwashing accusations; diversity-claims shareholder litigation",TBD,TBD,Yes
+Abbott Laboratories,ABT,Healthcare,0.99992861820257,Medium,social-governance,"Infant formula contamination; DOJ consent order; misleading-statement shareholder suit",TBD,TBD,Partial
+Illinois Tool Works Inc.,ITW,Industrials,0.9999538510972926,None,-,"No major public environmental controversy found",TBD,TBD,No
+Paccar Inc,PCAR,Industrials,0.999980841407163,Medium,environmental-governance,"Sued to exit Clean Truck Partnership emissions commitment",TBD,TBD,Partial
+"Equinix, Inc. Reit",EQIX,Real Estate,0.9999653777606128,None,-,"Only self-published sustainability report",TBD,TBD,No
+"Extra Space Storage, Inc.",EXR,Real Estate,0.9999659665532382,None,-,"Only self-published sustainability report",TBD,TBD,No
+"Simon Property Group, Inc.",SPG,Real Estate,0.9999809326504144,None,-,"Only self-published sustainability report",TBD,TBD,No
+Apple Inc.,AAPL,Technology,0.9999299854088148,High,environmental-litigation,"Carbon-neutral Apple Watch lawsuit; German court barred CO2-neutral ad",TBD,TBD,Yes
+Broadcom Inc.,AVGO,Technology,0.9999983584057098,None,-,"No major public controversy found",TBD,TBD,No
+Microchip Technology Inc,MCHP,Technology,0.9998970854996324,Medium,governance,"Shareholder proposal on products linked to international-law violations",TBD,TBD,Partial
+"Nrg Energy, Inc.",NRG,Utilities,0.9999700830847594,Medium,environmental-governance,"Shareholder proposal on missed decarbonization; solar misrepresented to board",TBD,TBD,Partial

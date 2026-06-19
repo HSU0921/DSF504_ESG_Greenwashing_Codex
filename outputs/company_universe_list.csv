@@ -1,0 +1,258 @@
+company,symbol,sector,greenwashing_label,model_risk_score
+"Air Products & Chemicals, Inc.",APD,Basic Materials,0,1.1149009685837842e-05
+Albemarle Corporation,ALB,Basic Materials,0,3.899814950945507e-06
+Eastman Chemical Company,EMN,Basic Materials,0,2.566717125597828e-07
+"Ecolab, Inc.",ECL,Basic Materials,0,7.794288970920384e-08
+Fmc Corporation,FMC,Basic Materials,0,4.6850220221326446e-07
+Freeport-Mcmoran Inc.,FCX,Basic Materials,0,1.1731728459038697e-07
+Lyondellbasell Industries N.v. Class A,LYB,Basic Materials,0,7.618910773570498e-06
+Martin Marietta Materials,MLM,Basic Materials,0,1.3448712426790316e-07
+Newmont Corporation,NEM,Basic Materials,0,1.1278223100314964e-07
+Nucor Corporation,NUE,Basic Materials,0,1.3054198824364138e-06
+"Ppg Industries, Inc.",PPG,Basic Materials,0,2.0219721510500763e-06
+Steel Dynamics Inc,STLD,Basic Materials,0,1.078576741977537e-05
+The Sherwin-Williams Company,SHW,Basic Materials,0,1.4243148551909241e-07
+Vulcan Materials Company,VMC,Basic Materials,0,1.2487766096150111e-06
+Charter Comm Inc Del Cl a,CHTR,Communication Services,0,8.330962944349496e-07
+Comcast Corp,CMCSA,Communication Services,0,2.8427045800756195e-07
+"T-Mobile Us, Inc.",TMUS,Communication Services,0,3.349515912739173e-05
+"The Interpublic Group of Companies, Inc.",IPG,Communication Services,0,5.772186236278845e-06
+Verizon Communications,VZ,Communication Services,0,1.6282432567843988e-06
+Amazon.com Inc,AMZN,Consumer Cyclical,1,0.9999614135431794
+Aptiv Plc,APTV,Consumer Cyclical,0,5.286870312610998e-07
+Avery Dennison Corp.,AVY,Consumer Cyclical,0,2.01102975716627e-07
+"Best Buy Company, Inc.",BBY,Consumer Cyclical,0,7.363381161698949e-08
+Booking Holdings Inc.,BKNG,Consumer Cyclical,0,7.902866433657934e-07
+Borgwarner Inc.,BWA,Consumer Cyclical,0,1.6305078480569395e-05
+Carmax Inc.,KMX,Consumer Cyclical,0,2.2976020719718882e-07
+Carnival Corporation,CCL,Consumer Cyclical,0,2.393542677620223e-06
+"Chipotle Mexican Grill, Inc.",CMG,Consumer Cyclical,0,2.25360599337512e-06
+D.R. Horton Inc.,DHI,Consumer Cyclical,0,2.727098590965996e-07
+Domino's Pizza Inc.,DPZ,Consumer Cyclical,0,3.275522414792476e-07
+Ebay Inc,EBAY,Consumer Cyclical,0,1.9467440080562742e-06
+Genuine Parts Company,GPC,Consumer Cyclical,0,4.257447328111111e-08
+Hilton Worldwide Holdings Inc.,HLT,Consumer Cyclical,0,2.6595779852643936e-08
+Las Vegas Sands Corp.,LVS,Consumer Cyclical,0,3.890387413574985e-08
+Lkq Corporation,LKQ,Consumer Cyclical,0,4.2027674351656216e-08
+Lululemon Athletica Inc.,LULU,Consumer Cyclical,0,1.148446040760877e-06
+Mgm Resorts International,MGM,Consumer Cyclical,0,3.267653599017489e-05
+"Mohawk Industries, Inc.",MHK,Consumer Cyclical,0,4.831622233931727e-08
+Norwegian Cruise Line Holdings Ltd.s,NCLH,Consumer Cyclical,0,1.1267697508943523e-07
+Packaging Corp of America,PKG,Consumer Cyclical,0,6.8785344520289485e-06
+"Pultegroup, Inc.",PHM,Consumer Cyclical,0,1.6456974793894092e-05
+Starbucks Corp,SBUX,Consumer Cyclical,0,1.1875610436653928e-06
+"Tapestry, Inc.",TPR,Consumer Cyclical,0,1.1112160285092624e-06
+"Tesla, Inc.",TSLA,Consumer Cyclical,1,0.9999982906493643
+"Tjx Companies, Inc.",TJX,Consumer Cyclical,0,5.580506999318612e-08
+Wynn Resorts Ltd,WYNN,Consumer Cyclical,1,0.9999983937437359
+"Yum! Brands, Inc.",YUM,Consumer Cyclical,0,3.807579943239804e-07
+Archer Daniels Midland Company,ADM,Consumer Defensive,0,7.393075381063978e-06
+Campbell Soup Company,CPB,Consumer Defensive,0,5.3875120098271726e-08
+"Church & Dwight Co., Inc.",CHD,Consumer Defensive,0,1.2806590036120596e-06
+"Conagra Brands, Inc.",CAG,Consumer Defensive,0,3.6682640823014023e-06
+"Constellation Brands, Inc.",STZ,Consumer Defensive,0,6.712535835706806e-08
+Dollar Tree Inc.,DLTR,Consumer Defensive,0,3.720843300888029e-06
+Hormel Foods Corporation,HRL,Consumer Defensive,0,2.7569714835598746e-08
+Kimberly-Clark Corp.,KMB,Consumer Defensive,0,1.1968946221281487e-07
+"Mccormick & Company, Incorporated Non-Vtg Cs",MKC,Consumer Defensive,0,6.919591688339985e-07
+"Mondelez International, Inc. Class A",MDLZ,Consumer Defensive,0,5.102328969495512e-08
+Sysco Corporation,SYY,Consumer Defensive,0,2.869268992577168e-08
+Target Corporation,TGT,Consumer Defensive,0,4.09127521512736e-08
+The Hershey Company,HSY,Consumer Defensive,0,6.688286828189061e-08
+The J.M. Smucker Company,SJM,Consumer Defensive,0,7.735183882484798e-06
+The Kraft Heinz Company,KHC,Consumer Defensive,0,1.0065982431419091e-07
+"Tyson Foods, Inc.",TSN,Consumer Defensive,0,2.539559530746923e-06
+Walmart Inc.,WMT,Consumer Defensive,0,5.9029314193609e-08
+Apa Corporation,APA,Energy,0,1.938578973127536e-06
+Chevron Corporation,CVX,Energy,1,0.9999992481007371
+Conocophillips,COP,Energy,0,9.010280631032466e-06
+Coterra Energy Inc.,CTRA,Energy,0,9.645015559691308e-05
+Devon Energy Corporation,DVN,Energy,0,3.5346499560966845e-06
+"Eog Resources, Inc.",EOG,Energy,0,2.071010156353054e-07
+Eqt Corp,EQT,Energy,0,2.481582366792348e-06
+Exxon Mobil Corporation,XOM,Energy,0,4.855298449099428e-06
+"Kinder Morgan, Inc.",KMI,Energy,0,2.692247840300219e-06
+Marathon Petroleum Corporation,MPC,Energy,0,9.901458090252472e-07
+Occidental Petroleum Corporation,OXY,Energy,0,4.220070051178219e-05
+Phillips 66,PSX,Energy,0,2.2432860688475757e-07
+Schlumberger Limited,SLB,Energy,0,5.2546964509476625e-06
+Valero Energy Corporation,VLO,Energy,0,6.679894095014873e-06
+Williams Companies Inc.,WMB,Energy,0,6.266834562095364e-06
+Aflac Inc.,AFL,Financial Services,0,1.0702425951334866e-07
+American Express Company,AXP,Financial Services,0,1.1678909079967342e-06
+"American International Group, Inc.",AIG,Financial Services,0,1.235934755445683e-06
+"Ameriprise Financial, Inc.",AMP,Financial Services,0,4.1671664193769047e-08
+Arch Capital Group Ltd,ACGL,Financial Services,0,8.762610670376313e-08
+Arthur J. Gallagher & Co.,AJG,Financial Services,0,2.7288687359184473e-07
+"Assurant, Inc.",AIZ,Financial Services,1,0.999956487193504
+Bank of New York Mellon Corporation,BK,Financial Services,0,2.7189785545809876e-07
+Capital One Financial,COF,Financial Services,0,6.427742471741477e-08
+"Cboe Global Markets, Inc.",CBOE,Financial Services,0,4.8908590964513366e-08
+Chubb Limited,CB,Financial Services,1,0.9998630185544447
+Cincinnati Financial Corp,CINF,Financial Services,0,5.9628347370032755e-05
+"Citizens Financial Group, Inc.",CFG,Financial Services,0,2.0138125589597403e-07
+Cme Group Inc.,CME,Financial Services,0,4.477720499577362e-08
+Fifth Third Bancorp,FITB,Financial Services,0,5.367801938096036e-08
+Huntington Bancshares Inc,HBAN,Financial Services,0,9.015263324337425e-06
+Invesco Ltd,IVZ,Financial Services,0,1.1383297638159171e-07
+Jpmorgan Chase & Co.,JPM,Financial Services,0,2.6894925998223167e-06
+M&t Bank Corp.,MTB,Financial Services,1,0.9999990736311402
+"Marsh & Mclennan Companies, Inc.",MMC,Financial Services,0,3.1474714496375017e-07
+"Msci, Inc.",MSCI,Financial Services,0,7.449380658254049e-07
+"Nasdaq, Inc.",NDAQ,Financial Services,0,1.2063204195146975e-06
+Northern Trust Corp,NTRS,Financial Services,0,1.1677128148646373e-05
+"Paypal Holdings, Inc.",PYPL,Financial Services,0,2.345585454064861e-07
+Pnc Financial Services Group,PNC,Financial Services,1,0.9999902590513283
+"Principal Financial Group, Inc.",PFG,Financial Services,0,4.3221914811041466e-08
+Progressive Corporation,PGR,Financial Services,0,8.806321105256048e-08
+"Raymond James Financial, Inc.",RJF,Financial Services,0,2.4366269616535918e-06
+S&p Global Inc.,SPGI,Financial Services,0,1.0870957247998965e-07
+State Street Corporation,STT,Financial Services,0,1.6000311451863397e-05
+Synchrony Financial,SYF,Financial Services,0,7.878287262340757e-07
+T Rowe Price Group Inc,TROW,Financial Services,0,4.482564460205692e-08
+The Charles Schwab Corporation,SCHW,Financial Services,0,8.022379139355878e-08
+"The Hartford Financial Services Group, Inc.",HIG,Financial Services,0,4.915819180563352e-08
+"The Travelers Companies, Inc.",TRV,Financial Services,0,3.0921303763770485e-07
+U.S. Bancorp,USB,Financial Services,0,5.745942157595628e-07
+W.R. Berkley Corporation,WRB,Financial Services,0,9.54149737752408e-08
+Wells Fargo & Co.,WFC,Financial Services,1,0.9999913568855465
+Abbott Laboratories,ABT,Healthcare,1,0.99992861820257
+Abbvie Inc.,ABBV,Healthcare,0,4.3309092005048094e-06
+Agilent Technologies Inc.,A,Healthcare,0,9.085661718175976e-08
+Amgen Inc,AMGN,Healthcare,0,1.5278502367644655e-07
+Baxter International Inc.,BAX,Healthcare,0,7.39376775924219e-08
+"Becton, Dickinson and Co.",BDX,Healthcare,0,1.6490943224261868e-07
+Biogen Inc.,BIIB,Healthcare,0,2.5711929057155754e-07
+Boston Scientific Corp.,BSX,Healthcare,0,9.896093853673946e-06
+Bristol-Myers Squibb Co.,BMY,Healthcare,0,4.062638753833149e-07
+"Cardinal Health, Inc.",CAH,Healthcare,0,1.6558726042719628e-07
+Centene Corporation,CNC,Healthcare,0,8.78599343874997e-08
+Danaher Corporation,DHR,Healthcare,0,2.5238830936854198e-08
+"Dexcom, Inc.",DXCM,Healthcare,0,6.402248221605806e-08
+Henry Schein Inc,HSIC,Healthcare,0,2.4650539154338312e-08
+Hologic Inc,HOLX,Healthcare,0,5.971399534728576e-07
+Idexx Laboratories Inc,IDXX,Healthcare,0,5.077516772416295e-06
+Incyte Genomics Inc,INCY,Healthcare,0,4.1894317104213726e-05
+Intuitive Surgical Inc.,ISRG,Healthcare,0,4.522866323280959e-07
+Iqvia Holdings Inc.,IQV,Healthcare,0,4.8321391194603684e-08
+Johnson & Johnson,JNJ,Healthcare,0,1.3483847848984748e-07
+Labcorp Holdings Inc.,LH,Healthcare,0,5.377924615987216e-06
+Medtronic Plc,MDT,Healthcare,0,1.3717185111360757e-07
+"Merck & Co., Inc.",MRK,Healthcare,0,1.2618336615498005e-07
+Mettler-Toledo International,MTD,Healthcare,0,1.3184777611185066e-05
+Quest Diagnostics Inc.,DGX,Healthcare,0,4.0221047611993854e-06
+Regeneron Pharmaceuticals Inc,REGN,Healthcare,0,8.933369929474001e-08
+Resmed Inc.,RMD,Healthcare,0,3.3136446480509635e-06
+Stryker Corporation,SYK,Healthcare,0,4.733879071164005e-07
+Teleflex Incorporated,TFX,Healthcare,0,1.9766744868386936e-07
+"The Cooper Companies, Inc.",COO,Healthcare,0,6.843002329626558e-07
+Unitedhealth Group Incorporated,UNH,Healthcare,0,7.74483859128336e-08
+"Universal Health Services, Inc. Class B",UHS,Healthcare,0,8.035409504538929e-07
+Vertex Pharmaceuticals Inc,VRTX,Healthcare,0,1.4078808311865628e-07
+"Walgreens Boots Alliance, Inc",WBA,Healthcare,0,1.0033024679754186e-07
+"Zimmer Biomet Holdings, Inc.",ZBH,Healthcare,0,1.6125811092825742e-05
+Zoetis Inc.,ZTS,Healthcare,0,3.808110121030394e-08
+3m Company,MMM,Industrials,0,0.00010253581321224324
+A.O. Smith Corporation,AOS,Industrials,0,2.53321483077143e-06
+Automatic Data Processing,ADP,Industrials,0,3.710186378961149e-08
+"C.H. Robinson Worldwide, Inc.",CHRW,Industrials,0,6.36748405505231e-06
+Cintas Corp,CTAS,Industrials,0,3.449162336393282e-08
+Copart Inc,CPRT,Industrials,0,9.735686464633451e-06
+Csx Corporation,CSX,Industrials,0,3.460938704614909e-06
+Cummins Inc.,CMI,Industrials,0,9.329542804490227e-08
+"Eaton Corporation, Plcs",ETN,Industrials,0,2.542103800776285e-07
+"Equifax, Incorporated",EFX,Industrials,0,1.7805520523082465e-05
+"Expeditors International of Washington, Inc.",EXPD,Industrials,0,1.1433585558857138e-07
+Fastenal Co,FAST,Industrials,0,8.724983961061285e-08
+Fedex Corporation,FDX,Industrials,0,4.4926198660115134e-08
+"Global Payments, Inc.",GPN,Industrials,0,3.597669791111547e-08
+Idex Corporation,IEX,Industrials,0,4.082260912736563e-06
+Illinois Tool Works Inc.,ITW,Industrials,1,0.9999538510972926
+Jb Hunt Transport Services Inc,JBHT,Industrials,0,1.5239047808403764e-06
+Johnson Controls International Plc,JCI,Industrials,0,1.47841718888008e-06
+Lockheed Martin Corp.,LMT,Industrials,0,2.4735811598222695e-05
+Nordson Corp,NDSN,Industrials,0,6.23973939035424e-05
+Paccar Inc,PCAR,Industrials,1,0.999980841407163
+Paychex Inc,PAYX,Industrials,0,8.438886226069745e-08
+Pentair Plc,PNR,Industrials,0,9.169195320681777e-08
+"Quanta Services, Inc.",PWR,Industrials,0,1.0885755188551582e-05
+Republic Services Inc.,RSG,Industrials,0,1.832842873117185e-06
+"Rockwell Automation, Inc.",ROK,Industrials,0,5.027430186679574e-08
+Southwest Airlines Co.,LUV,Industrials,0,1.968529448125331e-06
+"Stanley Black & Decker, Inc.",SWK,Industrials,0,1.90309477194876e-07
+"Textron, Inc.",TXT,Industrials,0,4.803136067057952e-05
+Transdigm Group Incorporated,TDG,Industrials,0,5.48803269472313e-07
+"United Parcel Service, Inc. Class B",UPS,Industrials,0,4.321304015655242e-06
+"Verisk Analytics, Inc.",VRSK,Industrials,0,9.079535912889588e-08
+"W.W. Grainger, Inc.",GWW,Industrials,0,3.394281018752661e-08
+Xylem Inc,XYL,Industrials,0,2.6018238435906014e-06
+American Tower Corporation,AMT,Real Estate,0,7.23688891591435e-08
+"Avalonbay Communities, Inc.",AVB,Real Estate,0,9.883646424126087e-08
+"Boston Properties, Inc.",BXP,Real Estate,0,4.864411645481914e-08
+Camden Property Trust,CPT,Real Estate,0,6.663119277686493e-08
+"Cbre Group, Inc.",CBRE,Real Estate,0,2.617028339942927e-06
+Costar Group Inc,CSGP,Real Estate,0,1.4466432312736082e-05
+"Digital Realty Trust, Inc.",DLR,Real Estate,0,2.4403928787814443e-07
+"Equinix, Inc. Reit",EQIX,Real Estate,1,0.9999653777606129
+Equity Residential,EQR,Real Estate,0,3.073349238410556e-07
+"Extra Space Storage, Inc.",EXR,Real Estate,1,0.9999659665532382
+Federal Realty Investment Trust,FRT,Real Estate,0,8.907975397917005e-07
+"Host Hotels & Resorts, Inc.",HST,Real Estate,0,2.5043155311576e-08
+"Mid-America Apartment Communities, Inc.",MAA,Real Estate,0,3.979055872142065e-08
+Sba Communications Corp,SBAC,Real Estate,0,3.782607290886e-08
+"Simon Property Group, Inc.",SPG,Real Estate,1,0.9999809326504143
+"Udr, Inc.",UDR,Real Estate,0,7.507336745010237e-08
+"Ventas, Inc.",VTR,Real Estate,0,1.6973751845557572e-06
+Accenture Plc,ACN,Technology,0,1.2210534099040344e-06
+Adobe Inc.,ADBE,Technology,0,1.4775433527107824e-06
+Akamai Technologies Inc,AKAM,Technology,0,5.074695617998155e-07
+Ansys Inc,ANSS,Technology,0,4.535494954038976e-08
+Apple Inc.,AAPL,Technology,1,0.9999299854088147
+Autodesk Inc,ADSK,Technology,0,1.5999348865372626e-07
+Broadcom Inc.,AVGO,Technology,1,0.9999983584057098
+Cadence Design Systems,CDNS,Technology,0,1.3371573055713613e-06
+"Cisco Systems, Inc.",CSCO,Technology,0,9.249947762734242e-08
+Cognizant Technology Solutions,CTSH,Technology,0,7.73036659822039e-07
+Corning Incorporated,GLW,Technology,0,1.068610350412224e-06
+"F5, Inc.",FFIV,Technology,0,6.853896785174164e-07
+"Fidelity National Information Services, Inc.",FIS,Technology,0,4.5358003865577364e-07
+"Fortinet, Inc.",FTNT,Technology,0,5.311748222737862e-07
+Fortive Corporation,FTV,Technology,0,1.1394934922985663e-05
+Garmin Ltd,GRMN,Technology,0,2.587284341017745e-06
+Henry (Jack) & Associates,JKHY,Technology,0,4.565663685479546e-08
+Intel Corp,INTC,Technology,0,7.965279852447672e-07
+International Business Machines Corporation,IBM,Technology,0,3.908726085482979e-08
+Intuit Inc,INTU,Technology,0,9.176521004482931e-08
+Juniper Networks Inc,JNPR,Technology,0,9.900218956917178e-07
+Kla Corporation,KLAC,Technology,0,5.775516287028945e-06
+Lam Research Corp,LRCX,Technology,0,7.371954491923221e-08
+"Leidos Holdings, Inc.",LDOS,Technology,0,4.593662771421592e-08
+Microchip Technology Inc,MCHP,Technology,1,0.9998970854996324
+Microsoft Corp,MSFT,Technology,0,2.4189515229429262e-05
+"Motorola Solutions, Inc.",MSI,Technology,0,4.146755782216791e-06
+"Netapp, Inc",NTAP,Technology,0,2.084713184451379e-06
+Nvidia Corp,NVDA,Technology,0,9.295214585330011e-08
+Nxp Semiconductors N.v.,NXPI,Technology,0,1.6947786763112962e-07
+Oracle Corp,ORCL,Technology,0,1.0138475313627602e-07
+"Palo Alto Networks, Inc.",PANW,Technology,0,5.971938585863687e-06
+"Ptc, Inc",PTC,Technology,0,7.532217805781574e-07
+Qualcomm Inc,QCOM,Technology,0,9.20563552332214e-08
+Seagate Technology Holdings Plcs,STX,Technology,0,2.9284184356445686e-06
+Skyworks Solutions Inc,SWKS,Technology,0,2.1755026856661295e-05
+Synopsys Inc,SNPS,Technology,0,7.806823298789074e-07
+Texas Instruments Incorporated,TXN,Technology,0,1.261215596497035e-07
+Trimble Inc.,TRMB,Technology,0,1.1429957401649597e-07
+Western Digital Corp.,WDC,Technology,0,3.962427666541982e-08
+Ameren Corporation,AEE,Utilities,0,5.658388757188206e-08
+"American Electric Power Company, Inc.",AEP,Utilities,0,3.608307147247181e-06
+"American Water Works Company, Inc",AWK,Utilities,0,8.714470359273686e-07
+Atmos Energy Corporation,ATO,Utilities,0,0.0001548244396647688
+"Centerpoint Energy, Inc.",CNP,Utilities,0,7.673288146061158e-05
+Cms Energy Corporation,CMS,Utilities,0,1.0364436245731654e-06
+Duke Energy Corporation,DUK,Utilities,0,3.4269827472180904e-06
+Edison International,EIX,Utilities,0,6.908681215235012e-07
+"Nrg Energy, Inc.",NRG,Utilities,1,0.9999700830847594
+Pg&e Corporation,PCG,Utilities,0,5.086191299853029e-05
+Pinnacle West Capital Corporation,PNW,Utilities,0,0.00013114210208612972
+Sempra,SRE,Utilities,0,3.733086107101955e-07
+"Wec Energy Group, Inc.",WEC,Utilities,0,2.077213335795097e-08

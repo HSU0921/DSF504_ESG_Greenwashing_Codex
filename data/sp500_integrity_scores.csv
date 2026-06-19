@@ -1,0 +1,504 @@
+ticker,company_name,exchange,sector,overall_rating,planet_friendly_business,honest_fair_business,no_war_no_weapons,fair_pay_worker_respect,better_health_for_all,safe_smart_tech,kind_to_animals,respect_cultures_communities,fair_money_economic_opportunity,fair_trade_ethical_sourcing,zero_waste_sustainable_products
+A,Agilent Technologies Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,10,-20,10,30,20,-20,0,0,-20,20
+AAPL,Apple Inc,US,Manufacture of computers and peripheral equipment,Mixed,40,-20,-20,-30,30,20,10,25,0,0,50
+ABBV,AbbVie Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-40,-40,0,-10,20,10,-30,25,0,-30,-20
+ABNB,Airbnb Inc,US,Short term accommodation activities,Mixed,-20,-50,0,10,-10,-10,20,25,20,0,-10
+ABT,Abbott Laboratories,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-50,-50,-30,40,-30,-30,50,0,-30,30
+ACGL,Arch Capital Group Ltd,US,Reinsurance,Mixed,10,0,0,40,0,20,0,0,0,0,0
+ACN,Accenture plc,US,Management consultancy activities,Mixed,40,-20,-20,10,10,30,0,25,0,20,0
+ADBE,Adobe Systems Incorporated,US,Software publishing,Mixed,10,-20,-20,10,10,40,0,25,0,10,70
+ADI,Analog Devices Inc,US,Manufacture of electronic components and boards,Mixed,20,-10,-30,0,20,10,0,0,0,-40,30
+ADM,Archer-Daniels-Midland Company,US,Manufacture of grain mill products,Mixed,-30,-30,0,-30,-30,0,-10,0,0,-30,-20
+ADP,Automatic Data Processing Inc,US,Other information technology and computer service activities,Mixed,-30,0,0,-10,20,20,0,25,0,0,0
+ADSK,Autodesk Inc,US,Computer programming activities,Mixed,50,-30,0,20,10,10,0,25,10,0,30
+AEE,Ameren Corp,US,"Electric power generation, transmission and distribution",Mixed,-30,-20,0,0,10,10,0,25,0,-20,-20
+AEP,American Electric Power Co Inc,US,"Electric power generation, transmission and distribution",Mixed,-30,-30,0,10,-20,10,10,25,0,-20,-10
+AES,The AES Corporation,US,"Electric power generation, transmission and distribution",Mixed,-30,0,0,10,-20,0,10,-30,0,-20,-10
+AFL,Aflac Incorporated,US,Life insurance,Mixed,40,40,0,-20,30,20,0,25,0,0,0
+AIG,American International Group Inc,US,Life insurance,Mixed,-30,-20,0,0,10,10,0,0,-10,0,0
+AIZ,Assurant Inc,US,Non-life insurance,Mixed,-20,-30,0,20,10,40,0,0,-10,0,20
+AJG,Arthur J Gallagher & Co,US,Activities of insurance agents and brokers,Mixed,-10,20,0,-20,10,-50,0,25,0,0,0
+AKAM,Akamai Technologies Inc,US,"Data processing, hosting and related activities",Mixed,-30,30,0,0,0,30,0,0,0,0,-10
+ALB,Albemarle Corp,US,Manufacture of basic chemicals,Mixed,-30,-20,-10,-40,10,10,0,25,-10,-30,0
+ALGN,Align Technology Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-30,0,20,20,0,0,0,0,-40,0
+ALL,The Allstate Corporation,US,Non-life insurance,Mixed,-20,-20,0,-30,0,-30,0,25,0,-20,-20
+ALLE,Allegion PLC,US,Manufacture of other fabricated metal products n.e.c.,Mixed,-30,0,0,-20,10,20,0,10,0,-30,0
+AMAT,Applied Materials Inc,US,Manufacture of other special-purpose machinery,Mixed,-30,-10,-20,10,10,10,0,25,0,0,-20
+AMCR,Amcor PLC,US,Manufacture of plastics products,Mixed,-30,-10,0,-20,0,0,0,25,0,-20,30
+AMD,Advanced Micro Devices Inc,US,Manufacture of electronic components and boards,Mixed,-30,10,-30,0,10,10,0,0,0,-30,-30
+AME,Ametek Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,0,-10,-20,10,0,0,0,0,-30,-20
+AMGN,Amgen Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,30,-40,0,0,0,-40,-20,25,0,-10,-20
+AMP,Ameriprise Financial Inc,US,Fund management activities,Mixed,0,0,0,-20,10,20,0,25,0,0,0
+AMT,American Tower Corp,US,Real estate activities with own or leased property,Mixed,-40,10,0,-10,10,0,0,25,0,-20,0
+AMZN,Amazon.com Inc,US,Retail sale via mail order houses or via Internet,Mixed,30,-30,-30,-30,30,-30,0,0,-20,-40,10
+ANET,Arista Networks,US,Manufacture of communication equipment,Mixed,-40,20,0,0,10,20,0,0,0,-30,0
+ANSS,ANSYS Inc,US,Computer programming activities,Mixed,10,40,-30,30,10,30,0,0,0,0,0
+AON,Aon PLC,US,Activities of insurance agents and brokers,Mixed,10,-20,0,0,20,-30,0,25,0,0,0
+AOS,Smith AO Corporation,US,Manufacture of domestic appliances,Mixed,10,40,0,10,20,10,0,25,0,-30,-20
+APA,APA Corporation,US,Extraction of crude petroleum,Mixed,-40,10,0,10,-10,0,-20,0,0,-20,-10
+APD,Air Products and Chemicals Inc,US,Manufacture of basic chemicals,Mixed,-30,-20,-10,-20,10,0,0,0,0,-20,0
+APH,Amphenol Corporation,US,Manufacture of electronic components and boards,Mixed,-40,-20,-30,-20,10,0,0,0,0,-30,-20
+APO,Apollo Global Management LLC Class A,US,Fund management activities,Mixed,10,-50,-20,-20,-20,-30,0,25,0,0,0
+APTV,Aptiv PLC,US,Manufacture of parts and accessories for motor vehicles,Mixed,-30,40,-20,-40,10,30,0,0,0,-20,10
+ARE,Alexandria Real Estate Equities Inc,US,Real estate activities with own or leased property,Mixed,20,40,10,0,30,0,0,10,0,0,0
+ATO,Atmos Energy Corporation,US,Manufacture of gas; distribution of gaseous fuels through mains,Mixed,-30,10,0,10,10,0,0,25,0,-10,-10
+AVB,AvalonBay Communities Inc,US,Real estate activities with own or leased property,Mixed,40,-20,0,-20,10,0,0,25,0,0,0
+AVGO,Broadcom Inc,US,Manufacture of electronic components and boards,Mixed,-40,-20,0,0,10,40,0,25,0,-40,-10
+AVY,Avery Dennison Corp,US,Manufacture of plastics products,Mixed,-30,40,-10,-30,10,20,10,25,0,-20,40
+AWK,American Water Works,US,"Water collection, treatment and supply",Mixed,10,-10,0,-10,30,-70,10,0,10,-10,0
+AXON,Axon Enterprise Inc.,US,Manufacture of optical instruments and photographic equipment,Mixed,-30,30,-20,10,10,-30,0,25,0,-20,-20
+AXP,American Express Company,US,Other credit granting,Mixed,-20,-40,0,40,10,30,-10,25,-20,-10,-20
+AZO,AutoZone Inc,US,Other retail sale of new goods in specialized stores,Mixed,-30,-30,0,-50,10,-60,0,0,0,-20,-20
+BA,The Boeing Company,US,Manufacture of air and spacecraft and related machinery,Mixed,-40,-60,-70,-20,0,-30,10,0,0,-20,0
+BAC,Bank of America Corp,US,Other monetary intermediation,Mixed,0,-50,-10,10,20,0,-20,25,-20,0,-20
+BALL,Ball Corporation,US,"Manufacture of tanks, reservoirs and containers of metal",Mixed,-20,10,-20,-30,10,0,0,0,0,60,50
+BAX,Baxter International Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-30,-10,-10,30,-40,-30,0,0,-20,-30
+BBY,Best Buy Co. Inc,US,"Retail sale of computers, peripheral units, software and telecommunications equipment in specialized stores",Mixed,-20,20,0,-20,20,0,0,25,-10,-30,40
+BDX,Becton Dickinson and Company,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-20,10,-20,30,20,-20,25,0,0,-20
+BEN,Franklin Resources Inc,US,Fund management activities,Mixed,10,-10,-40,20,0,0,0,0,0,0,0
+BF-B,Brown-Forman Corporation,US,"Distilling, rectifying and blending of spirits",Mixed,-30,10,0,-50,-20,0,20,0,0,-30,20
+BG,Bunge Limited,US,Wholesale of agricultural raw materials and live animals,Mixed,-30,-10,0,-20,10,-10,-20,-25,0,-30,-10
+BIIB,Biogen Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,40,-80,0,-20,-20,-10,-30,25,0,0,70
+BK,The Bank of New York Mellon Corporation,US,Other monetary intermediation,Mixed,20,-20,-20,-20,10,-30,-10,25,10,0,10
+BKNG,Booking Holdings Inc,US,Other reservation service and related activities,Mixed,-30,10,-10,-10,0,0,0,-25,0,0,0
+BKR,Baker Hughes Co,US,Support activities for petroleum and natural gas extraction,Mixed,-30,-20,0,-20,-10,0,0,25,0,-30,-20
+BLDR,Builders FirstSource Inc,US,"Wholesale of construction materials, hardware, plumbing and heating equipment and supplies",Mixed,-20,0,0,-20,0,0,0,-10,0,-20,-10
+BLK,BlackRock Inc,US,Fund management activities,Mixed,-20,-30,-20,-10,0,0,-20,-10,0,0,10
+BMY,Bristol-Myers Squibb Company,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-60,10,-10,30,10,-30,-25,-10,-10,-20
+BR,Broadridge Financial Solutions Inc,US,"Data processing, hosting and related activities",Mixed,-10,40,0,30,10,10,0,20,10,0,0
+BRK-B,Berkshire Hathaway Inc,US,Activities of holding companies,Mixed,-30,-30,-20,-30,20,0,0,-10,-20,-20,-20
+BRO,Brown & Brown Inc,US,Activities of insurance agents and brokers,Mixed,10,30,0,20,20,-20,0,0,0,0,0
+BSX,Boston Scientific Corp,US,Manufacture of medical and dental instruments and supplies,Mixed,30,-40,-20,10,30,30,-30,25,0,-30,-20
+BWA,BorgWarner Inc,US,Manufacture of parts and accessories for motor vehicles,Mixed,30,20,0,-30,-10,0,0,25,0,0,-20
+BX,Blackstone Group Inc,US,Fund management activities,Mixed,-20,-40,-20,-40,30,10,0,-10,0,-50,0
+BXP,Boston Properties Inc,US,Real estate activities with own or leased property,Mixed,10,20,0,10,10,20,10,0,0,0,-10
+C,Citigroup Inc,US,Other monetary intermediation,Mixed,-20,-40,-20,-20,0,-20,-20,-25,-30,-10,0
+CAG,ConAgra Foods Inc,US,Manufacture of other food products n.e.c.,Mixed,-30,-20,0,-30,-20,0,-30,25,0,-30,-20
+CAH,Cardinal Health Inc,US,Wholesale of other household goods,Mixed,-30,30,0,10,30,10,0,25,10,0,-20
+CARR,Carrier Global Corp,US,Manufacture of other general-purpose machinery,Mixed,-30,10,-10,-10,20,10,10,10,0,0,10
+CAT,Caterpillar Inc,US,"Manufacture of machinery for mining, quarrying and construction",Mixed,-30,-30,-10,-20,0,0,-10,-25,0,-20,10
+CB,Chubb Ltd,US,Life insurance,Mixed,-30,20,0,-40,30,10,10,0,0,0,0
+CBOE,Cboe Global Markets Inc,US,Administration of financial markets,Mixed,-20,-10,0,30,0,40,0,0,0,0,0
+CBRE,CBRE Group Inc Class A,US,Real estate activities on a fee or contract basis,Mixed,-30,-20,-20,-20,10,10,0,25,0,-20,10
+CCI,Crown Castle,US,Other telecommunications activities,Mixed,40,40,0,-20,0,0,0,0,0,-20,0
+CCL,Carnival Corporation,US,Sea and coastal passenger water transport,Mixed,-30,-30,0,-30,-10,-50,-10,25,0,-20,-20
+CDNS,Cadence Design Systems Inc,US,Computer programming activities,Mixed,40,30,-30,-10,20,30,0,25,10,0,-20
+CDW,CDW Corp,US,"Wholesale of computers, computer peripheral equipment and software",Mixed,-30,-20,-20,10,20,10,0,25,0,-20,-20
+CE,Celanese Corporation,US,Manufacture of basic chemicals,Mixed,-30,20,0,-20,10,10,-10,-25,0,-20,10
+CEG,Constellation Energy Corp,US,"Electric power generation, transmission and distribution",Mixed,30,40,0,10,0,10,10,0,0,0,0
+CF,CF Industries Holdings Inc,US,Manufacture of fertilizers and nitrogen compounds,Mixed,-30,10,0,-20,-10,0,0,0,0,-20,-20
+CFG,"Citizens Financial Group, Inc.",US,Other monetary intermediation,Mixed,10,10,-10,0,10,-30,0,25,10,0,0
+CHD,Church & Dwight Company Inc,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,-20,-20,0,-20,20,10,-40,0,0,-30,-20
+CHRW,CH Robinson Worldwide Inc,US,Other transportation support activities,Mixed,20,-20,0,-30,10,20,0,25,0,-10,-10
+CHTR,Charter Communications Inc,US,Wired telecommunications activities,Mixed,-30,-50,0,-40,10,10,0,25,0,-10,-20
+CI,Cigna Corp,US,Life insurance,Mixed,-30,-20,0,-40,30,0,0,25,0,-30,-20
+CINF,Cincinnati Financial Corporation,US,Life insurance,Mixed,10,-30,0,30,0,20,0,0,0,0,0
+CL,Colgate-Palmolive Company,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,-30,10,0,-30,30,20,-20,25,0,-30,30
+CLX,The Clorox Company,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,-30,-20,10,10,30,-50,-10,25,0,-20,-20
+CMCSA,Comcast Corp,US,Wired telecommunications activities,Mixed,-30,0,0,-40,20,-40,0,25,0,-20,20
+CME,CME Group Inc,US,Administration of financial markets,Mixed,30,10,0,10,0,20,0,0,0,0,0
+CMG,Chipotle Mexican Grill Inc,US,Restaurants and mobile food service activities,Mixed,-30,-20,0,-30,-30,0,-20,-10,0,-30,-20
+CMI,Cummins Inc,US,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",Mixed,-30,-20,-20,-20,10,-30,10,25,10,-20,-20
+CMS,CMS Energy Corporation,US,"Electric power generation, transmission and distribution",Mixed,-30,-50,0,-20,0,-40,10,25,0,0,0
+CNC,Centene Corp,US,Life insurance,Mixed,-30,-100,0,-10,40,-20,0,25,0,0,-10
+CNP,CenterPoint Energy Inc,US,"Electric power generation, transmission and distribution",Mixed,-10,-10,-10,-20,0,10,0,0,0,-10,0
+COF,Capital One Financial Corporation,US,Other monetary intermediation,Mixed,-30,-20,-30,-30,10,-30,0,25,0,-10,-20
+COO,"The Cooper Companies, Inc",US,Manufacture of medical and dental instruments and supplies,Mixed,10,-20,0,0,30,-40,0,0,0,0,10
+COP,ConocoPhillips,US,Extraction of crude petroleum,Mixed,-40,-20,-20,-20,-30,0,-30,25,0,-40,-30
+COR,Cencora Inc.,US,Wholesale of other household goods,Mixed,-40,20,-20,20,40,-60,0,0,0,-20,-30
+COST,Costco Wholesale Corp,US,"Retail sale in non-specialized stores with food, beverages or tobacco predominating",Mixed,-30,30,0,-10,20,0,-30,0,0,-20,10
+CPAY,Corpay Inc,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,-20,-20,10,10,0,10,0,0,0,0,0
+CPB,Campbell Soup Company Common Stock,US,Manufacture of prepared meals and dishes,Mixed,-30,-20,0,0,10,0,-20,25,0,-20,-20
+CPRT,Copart Inc,US,Wholesale of waste and scrap and other products n.e.c.,Mixed,10,-10,0,-20,0,0,0,0,0,0,30
+CPT,Camden Property Trust,US,Real estate activities with own or leased property,Mixed,-20,30,0,40,10,10,0,0,0,0,0
+CRL,Charles River Laboratories,US,Research and experimental development on natural sciences and engineering,Mixed,40,-10,-20,-20,10,10,-40,0,0,0,-10
+CRM,Salesforce.com Inc,US,Computer programming activities,Mixed,40,60,-20,-20,20,30,10,0,10,0,0
+CRWD,Crowdstrike Holdings Inc,US,Computer programming activities,Mixed,0,10,-20,0,-50,10,0,25,0,0,0
+CSCO,Cisco Systems Inc,US,Manufacture of communication equipment,Mixed,40,60,-20,-20,20,30,0,50,10,-30,40
+CSGP,CoStar Group Inc,US,Web portals,Mixed,10,10,0,-20,0,-20,0,0,0,0,0
+CSX,CSX Corporation,US,Freight rail transport,Mixed,-30,-30,0,-20,0,-10,0,25,0,-10,-20
+CTAS,Cintas Corporation,US,"Washing and (dry-), cleaning of textile and fur products",Mixed,-30,10,0,-30,0,0,0,0,0,-20,0
+CTRA,Coterra Energy Inc,US,Extraction of crude petroleum,Mixed,-30,0,0,-10,10,0,-20,-10,0,0,-10
+CTSH,Cognizant Technology Solutions Corp Class A,US,Computer consultancy and computer facilities management activities,Mixed,30,-10,-20,-20,30,30,0,25,0,0,-10
+CTVA,Corteva Inc,US,Manufacture of pesticides and other agrochemical products,Mixed,-30,10,0,-30,-30,0,0,-40,0,-20,-20
+CVS,CVS Health Corp,US,"Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles in specialized stores",Mixed,-30,-40,0,-30,40,-20,-10,25,-20,-20,-20
+CVX,Chevron Corp,US,Extraction of crude petroleum,Mixed,-40,-40,-10,-10,-40,0,-30,-25,0,-20,-20
+CZR,Caesars Entertainment Corporation,US,Gambling and betting activities,Mixed,-30,-20,0,10,-10,-40,-20,25,0,20,-30
+D,Dominion Energy Inc,US,"Electric power generation, transmission and distribution",Mixed,-30,-30,0,0,-20,10,10,25,0,-10,-20
+DAL,Delta Air Lines Inc,US,Passenger air transport,Mixed,-30,10,0,0,-10,-40,10,25,10,-20,-20
+DAY,Dayforce Inc.,US,Computer programming activities,Mixed,40,10,0,10,0,0,0,0,0,0,40
+DD,Dupont De Nemours Inc,US,Manufacture of basic chemicals,Mixed,-30,-20,-20,-10,0,10,0,25,0,-30,-20
+DE,Deere & Company,US,Manufacture of agricultural and forestry machinery,Mixed,-30,-10,-20,-20,10,0,-10,-10,-10,-10,-20
+DECK,Deckers Outdoor Corporation,US,Manufacture of footwear,Mixed,-30,20,0,10,0,0,-20,25,0,20,-20
+DELL,Dell Technologies Inc,US,Manufacture of computers and peripheral equipment,Mixed,-30,40,-30,-20,30,20,0,50,-20,-30,30
+DFS,Discover Financial Services,US,Other credit granting,Mixed,-30,-30,0,10,0,-10,0,10,-20,0,0
+DG,Dollar General Corporation,US,Other retail sale in non-specialized stores,Mixed,-30,-40,0,-60,0,-10,-20,-10,0,-30,-30
+DGX,Quest Diagnostics Incorporated,US,Other human health activities,Mixed,-20,0,0,0,30,-50,0,25,0,-30,0
+DHI,DR Horton Inc,US,Construction of buildings,Mixed,-30,-20,0,-30,-10,0,-10,0,-10,-20,-20
+DHR,Danaher Corporation,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,-10,30,-10,40,-40,-10,10,0,-30,-20
+DIS,Walt Disney Company,US,"Motion picture, video and television programme production activities",Mixed,20,-20,0,-30,20,-40,20,-25,0,-30,10
+DLR,Digital Realty Trust Inc,US,Real estate activities with own or leased property,Mixed,30,10,0,-20,0,-10,0,0,0,0,0
+DLTR,Dollar Tree Inc,US,Other retail sale in non-specialized stores,Mixed,-30,-60,0,-30,-30,-40,-20,0,0,-30,-30
+DOC,Healthpeak Properties Inc,US,Real estate activities with own or leased property,Mixed,40,10,0,10,30,0,0,0,0,0,-20
+DOV,Dover Corporation,US,Manufacture of other general-purpose machinery,Mixed,-20,20,-40,-20,0,-40,0,0,0,-20,-20
+DOW,Dow Inc,US,Manufacture of plastics and synthetic rubber in primary forms,Mixed,-40,-10,-10,-10,-10,20,-20,25,0,-30,10
+DPZ,Domino's Pizza Inc Common Stock,US,Restaurants and mobile food service activities,Mixed,-20,20,0,-40,-10,-30,-20,0,0,-20,-20
+DRI,Darden Restaurants Inc,US,Restaurants and mobile food service activities,Mixed,-30,0,0,-20,0,0,-20,25,0,0,-20
+DTE,DTE Energy Company,US,"Electric power generation, transmission and distribution",Mixed,0,-30,0,-20,10,0,10,25,-10,-30,-20
+DUK,Duke Energy Corporation,US,"Electric power generation, transmission and distribution",Mixed,-30,0,-20,-20,0,-30,-30,25,-10,-20,-20
+DVA,DaVita HealthCare Partners Inc,US,Other human health activities,Mixed,40,-70,0,0,-20,-40,0,25,0,0,-20
+DVN,Devon Energy Corporation,US,Extraction of crude petroleum,Mixed,-40,-20,0,0,-10,0,-20,25,0,-10,-20
+DXCM,DexCom Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-20,0,-20,50,20,-10,10,0,-10,-30
+EA,Electronic Arts Inc,US,Software publishing,Mixed,-30,-20,0,-20,10,10,0,25,0,0,0
+EBAY,eBay Inc,US,Retail sale via mail order houses or via Internet,Mixed,30,20,10,-20,0,-30,10,-10,20,0,30
+ECL,Ecolab Inc,US,"Other professional, scientific and technical activities n.e.c.",Mixed,40,40,0,-20,30,30,-20,25,0,-30,30
+ED,Consolidated Edison Inc,US,"Electric power generation, transmission and distribution",Mixed,-30,-10,-10,-10,10,-10,10,25,-40,0,-20
+EFX,Equifax Inc,US,"Data processing, hosting and related activities",Mixed,-30,-50,0,-40,10,-20,0,-10,-10,0,0
+EG,Everest Group Ltd,US,Management consultancy activities,Mixed,-20,20,0,0,10,-40,0,25,0,0,0
+EIX,Edison International,US,"Electric power generation, transmission and distribution",Mixed,-20,0,0,-20,10,0,10,25,0,-30,-10
+EL,Estee Lauder Companies Inc,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,30,0,10,-10,10,-30,-30,25,0,30,-20
+ELV,Elevance Health Inc,US,Life insurance,Mixed,30,-70,0,10,40,20,0,25,10,0,0
+EMN,Eastman Chemical Company,US,Manufacture of basic chemicals,Mixed,-30,0,0,-30,10,0,-10,0,0,-10,30
+EMR,Emerson Electric Company,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,40,-30,-10,-10,0,20,0,0,0,-70,-20
+ENPH,Enphase Energy Inc,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,30,20,10,10,10,-30,10,25,10,-20,60
+EOG,EOG Resources Inc,US,Extraction of crude petroleum,Mixed,-40,-20,0,-30,-10,-10,-20,-20,0,-10,-20
+EPAM,EPAM Systems Inc,US,Computer programming activities,Mixed,10,10,10,20,20,30,0,25,0,0,0
+EQIX,Equinix Inc,US,"Data processing, hosting and related activities",Mixed,40,10,0,10,10,20,0,25,0,-40,0
+EQR,Equity Residential,US,Real estate activities with own or leased property,Mixed,-30,20,0,10,10,-30,0,0,0,0,0
+EQT,EQT Corporation,US,Extraction of natural gas,Mixed,-30,-20,0,-20,-20,-10,10,25,0,0,-20
+ERIE,Erie Indemnity Company,US,Activities of insurance agents and brokers,Mixed,10,40,0,30,10,20,0,25,0,0,0
+ES,Eversource Energy,US,"Electric power generation, transmission and distribution",Mixed,-20,-20,-20,-40,10,-20,10,25,0,-20,-10
+ESS,Essex Property Trust Inc,US,Real estate activities with own or leased property,Mixed,-20,20,0,-20,10,-20,0,-50,0,0,-40
+ETN,Eaton Corporation PLC,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,-30,40,-30,-10,10,20,0,0,0,-30,40
+ETR,Entergy Corporation,US,"Electric power generation, transmission and distribution",Mixed,-20,-30,0,20,-20,-20,10,25,10,-30,-20
+EVRG,"Evergy, Inc.",US,"Electric power generation, transmission and distribution",Mixed,-30,10,0,-20,-10,20,-10,25,0,-20,0
+EW,Edwards Lifesciences Corp,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-20,10,20,40,20,-40,0,0,-10,-20
+EXC,Exelon Corporation,US,"Electric power generation, transmission and distribution",Mixed,-40,-70,-20,-30,10,20,10,25,0,-10,0
+EXPD,"Expeditors International of Washington, Inc.",US,Other transportation support activities,Mixed,-10,-20,-10,-10,10,10,0,0,0,0,0
+EXPE,Expedia Group Inc.,US,Travel agency activities,Mixed,-30,-20,0,-10,0,0,0,25,0,-10,0
+EXR,Extra Space Storage Inc,US,Real estate activities with own or leased property,Mixed,30,40,0,10,0,-30,0,25,0,0,0
+F,Ford Motor Company,US,Manufacture of motor vehicles,Mixed,0,-40,-20,-10,10,-30,20,25,0,-40,-20
+FANG,Diamondback Energy Inc,US,Extraction of crude petroleum,Mixed,-40,0,0,-20,-20,0,-10,25,0,-20,-20
+FAST,Fastenal Company,US,"Wholesale of construction materials, hardware, plumbing and heating equipment and supplies",Mixed,20,-30,-10,-40,0,20,0,0,0,-30,-30
+FCX,Freeport-McMoran Copper & Gold Inc,US,Mining of other non-ferrous metal ores,Mixed,-30,20,0,-20,0,-50,0,25,0,-40,-20
+FDS,FactSet Research Systems Inc,US,Other information service activities n.e.c.,Mixed,-30,30,0,10,0,20,0,0,0,0,0
+FDX,FedEx Corporation,US,Courier activities,Mixed,-30,-10,-20,-40,30,-40,10,25,0,-10,-20
+FE,FirstEnergy Corporation,US,"Electric power generation, transmission and distribution",Mixed,-30,-70,0,0,10,-30,10,25,0,-20,-20
+FFIV,F5 Networks Inc,US,Computer programming activities,Mixed,-30,-10,-20,10,10,10,0,25,0,-10,0
+FI,"Fiserv, Inc.",US,Other information technology and computer service activities,Mixed,-30,10,0,-20,0,-30,0,0,10,0,-20
+FICO,Fair Isaac Corporation,US,Computer programming activities,Mixed,-20,-20,-10,10,0,40,0,0,10,0,0
+FIS,Fidelity National Information Services Inc,US,Other information technology and computer service activities,Mixed,-30,-10,0,-10,0,10,0,0,0,0,-20
+FITB,Fifth Third Bancorp,US,Other monetary intermediation,Mixed,30,0,-20,-20,10,30,0,25,-20,-10,0
+FMC,FMC Corporation,US,Manufacture of pesticides and other agrochemical products,Mixed,-30,-20,30,-10,-20,10,-30,-30,0,-30,-30
+FOX,Fox Corp Class B,US,Television programming and broadcasting activities,Mixed,-20,-40,0,-40,-40,10,0,0,0,0,-40
+FOXA,Fox Corp Class A,US,Television programming and broadcasting activities,Mixed,-30,-60,0,-30,-10,-20,0,0,0,0,-40
+FRT,Federal Realty Investment Trust,US,Real estate activities with own or leased property,Mixed,0,40,0,20,10,0,0,25,0,0,0
+FSLR,First Solar Inc,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,40,30,0,-20,10,0,0,25,0,60,0
+FTNT,Fortinet Inc,US,"Wholesale of computers, computer peripheral equipment and software",Mixed,-20,10,10,10,10,20,0,25,0,0,0
+FTV,Fortive Corp,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,-10,-20,-20,30,10,0,25,0,-10,0
+GD,General Dynamics Corporation,US,Manufacture of military fighting vehicles,Mixed,-40,-20,-80,-40,0,-10,0,-10,0,-20,-30
+GDDY,Godaddy Inc,US,"Data processing, hosting and related activities",Mixed,40,40,0,40,0,-20,-10,0,0,0,0
+GE,GE Aerospace,US,Manufacture of air and spacecraft and related machinery,Mixed,-20,-20,-60,-10,10,20,10,25,0,-20,-20
+GEHC,GE HealthCare Technologies Inc.,US,"Manufacture of irradiation, electromedical and electrotherapeutic equipment",Mixed,-30,20,-10,-60,40,10,-20,0,0,-40,0
+GEN,Gen Digital Inc.,US,Computer programming activities,Mixed,20,10,0,0,0,20,0,0,0,0,0
+GEV,GE Vernova LLC,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,30,10,10,-20,10,30,10,0,0,-40,-20
+GILD,Gilead Sciences Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-30,-10,20,20,-10,-20,25,-10,-10,-20
+GIS,General Mills Inc,US,Manufacture of other food products n.e.c.,Mixed,0,0,0,0,-20,10,-10,-25,0,-20,0
+GL,Globe Life Inc,US,Life insurance,Mixed,-30,-30,10,-20,20,-80,0,0,-20,0,0
+GLW,Corning Incorporated,US,Manufacture of glass and glass products,Mixed,30,10,-10,-40,30,20,0,25,0,-30,30
+GM,General Motors Company,US,Manufacture of motor vehicles,Mixed,-20,-10,-60,-30,-20,-50,0,-25,0,-30,30
+GNRC,Generac Holdings Inc,US,"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",Mixed,10,0,0,10,10,-10,0,25,0,-30,-20
+GOOG,Alphabet Inc Class C,US,Web portals,Mixed,10,-30,-10,-20,-10,-20,10,50,10,0,30
+GOOGL,Alphabet Inc Class A,US,Web portals,Mixed,40,-40,-30,-30,30,-30,20,25,20,-20,40
+GPC,Genuine Parts Co,US,Wholesale of waste and scrap and other products n.e.c.,Mixed,-30,20,-10,0,10,0,0,0,0,-20,0
+GPN,Global Payments Inc,US,Other activities auxiliary to financial service activities,Mixed,-20,10,0,-20,0,-30,0,0,0,0,0
+GRMN,Garmin Ltd,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,10,20,-30,20,20,10,0,0,0,-20,-20
+GS,Goldman Sachs Group Inc,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,-20,-60,-40,-20,10,20,-20,25,10,0,0
+GWW,WW Grainger Inc,US,Non-specialized wholesale trade,Mixed,-30,10,-10,0,10,0,0,0,0,0,0
+HAL,Halliburton Company,US,Support activities for petroleum and natural gas extraction,Mixed,-40,-60,-20,-20,-20,-70,-20,-25,0,-40,-10
+HAS,Hasbro Inc,US,Manufacture of games and toys,Mixed,-30,-20,0,-20,10,0,0,0,0,10,-20
+HBAN,Huntington Bancshares Incorporated,US,Other monetary intermediation,Mixed,-30,-20,0,-20,10,0,0,25,0,0,0
+HCA,HCA Holdings Inc,US,Hospital activities,Mixed,-30,20,0,-30,30,-60,0,0,0,-10,-30
+HD,Home Depot Inc,US,"Retail sale of hardware, paints and glass in specialized stores",Mixed,-30,20,0,-30,-30,0,-20,25,0,-40,-20
+HES,Hess Corporation,US,Extraction of crude petroleum,Mixed,-40,-30,-10,-20,0,0,-10,-30,0,-10,-10
+HIG,Hartford Financial Services Group,US,Life insurance,Mixed,-20,40,0,20,30,20,0,0,-10,0,0
+HII,Huntington Ingalls Industries Inc,US,Building of ships and floating structures,Mixed,-40,-10,-90,-40,0,-20,0,0,0,-20,-20
+HLT,Hilton Worldwide Holdings Inc,US,Short term accommodation activities,Mixed,-30,-10,10,-30,10,20,-10,25,0,-20,-20
+HOLX,Hologic Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-50,-10,-20,40,0,-10,0,0,0,-20
+HON,Honeywell International Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,-40,-40,-20,10,20,0,25,0,-20,0
+HPE,Hewlett Packard Enterprise Co,US,Computer consultancy and computer facilities management activities,Mixed,-30,40,-40,-20,0,-40,0,0,10,-40,-20
+HPQ,HP Inc,US,Manufacture of computers and peripheral equipment,Mixed,-30,-30,-30,-20,20,20,0,25,0,0,30
+HRL,Hormel Foods Corporation,US,Processing and preserving of meat,Mixed,-30,40,0,-20,-10,0,-30,25,0,-20,-30
+HSIC,Henry Schein Inc,US,Wholesale of other household goods,Mixed,-30,0,0,-10,30,-50,0,25,0,-20,-20
+HST,Host Hotels & Resorts Inc,US,Real estate activities with own or leased property,Mixed,-30,40,0,10,0,0,0,0,0,0,0
+HSY,Hershey Co,US,"Manufacture of cocoa, chocolate and sugar confectionery",Mixed,0,20,0,0,-10,0,0,25,0,0,0
+HUBB,Hubbell Inc,US,Manufacture of other electrical equipment,Mixed,0,40,0,-20,10,10,10,0,0,-10,-30
+HUM,Humana Inc,US,Life insurance,Mixed,-30,-50,-10,30,40,-40,0,25,0,-20,30
+HWM,Howmet Aerospace Inc,US,Manufacture of basic precious and other non-ferrous metals,Mixed,-30,10,-30,-20,0,0,0,10,0,0,-20
+IBM,International Business Machines,US,Computer consultancy and computer facilities management activities,Mixed,30,10,-30,-30,20,0,10,25,10,10,-20
+ICE,Intercontinental Exchange Inc,US,Administration of financial markets,Mixed,10,-10,0,10,0,-30,0,0,0,0,0
+IDXX,IDEXX Laboratories Inc,US,"Other professional, scientific and technical activities n.e.c.",Mixed,-30,-20,0,0,30,0,10,0,0,-20,10
+IEX,IDEX Corporation,US,"Manufacture of other pumps, compressors, taps and valves",Mixed,-40,60,-10,-20,10,0,0,0,0,0,-20
+IFF,International Flavors & Fragrances Inc,US,Manufacture of other chemical products n.e.c.,Mixed,-30,10,0,-20,0,-10,-10,25,0,10,20
+INCY,Incyte Corporation,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-20,0,40,20,10,-40,0,-10,0,-20
+INTC,Intel Corporation,US,Manufacture of electronic components and boards,Mixed,-30,60,-30,0,10,30,10,25,0,10,30
+INTU,Intuit Inc,US,Computer programming activities,Mixed,10,0,0,-20,10,-10,0,25,10,-10,0
+INVH,Invitation Homes Inc,US,Real estate activities with own or leased property,Mixed,0,-40,0,-40,0,-10,0,-10,-20,0,-30
+IP,International Paper,US,"Manufacture of pulp, paper and paperboard",Mixed,-30,20,0,0,10,-50,10,25,0,-20,0
+IPG,Interpublic Group of Companies Inc,US,Advertising,Mixed,30,-20,0,10,10,-20,0,25,0,0,0
+IQV,IQVIA Holdings Inc,US,Research and experimental development on natural sciences and engineering,Mixed,-30,10,0,10,30,0,0,0,0,0,-20
+IR,Ingersoll Rand Inc,US,Manufacture of other general-purpose machinery,Mixed,-20,10,-10,0,0,-10,0,0,0,-20,0
+IRM,Iron Mountain Incorporated,US,Warehousing and storage,Mixed,40,10,0,-20,10,0,0,25,0,0,-20
+ISRG,Intuitive Surgical Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-10,20,0,-50,0,20,-60,0,0,-20,-30
+IT,Gartner Inc,US,Management consultancy activities,Mixed,-30,-10,-10,10,0,10,0,0,0,0,0
+ITW,Illinois Tool Works Inc,US,Manufacture of other general-purpose machinery,Mixed,-30,-20,-20,-30,0,0,0,0,0,0,0
+IVZ,Invesco Plc,US,Fund management activities,Mixed,20,-30,0,10,10,10,0,0,-10,-10,0
+J,Jacobs Solutions Inc.,US,Architectural and engineering activities and related technical consultancy,Mixed,-20,-20,-20,0,10,10,0,25,10,-20,0
+JBHT,JB Hunt Transport Services Inc,US,Freight transport by road,Mixed,-30,10,0,-10,0,0,0,0,0,0,0
+JBL,Jabil Circuit Inc,US,Manufacture of electronic components and boards,Mixed,-30,-50,-30,-30,20,0,0,25,0,-30,10
+JCI,Johnson Controls International PLC,US,Construction of buildings,Mixed,0,60,0,-10,20,0,0,0,0,0,-20
+JKHY,Jack Henry & Associates Inc,US,Computer programming activities,Mixed,-10,0,0,0,0,0,0,0,10,0,0
+JNJ,Johnson & Johnson,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-30,-20,-20,-20,-30,-20,25,0,-30,20
+JNPR,Juniper Networks Inc,US,Manufacture of communication equipment,Mixed,30,-20,-40,0,30,20,10,0,0,-40,-20
+JPM,JPMorgan Chase & Co,US,Other monetary intermediation,Mixed,-30,-80,-10,-30,10,10,-10,-25,-20,-20,0
+K,Kellanova,US,Manufacture of bakery products,Mixed,10,50,0,-30,-10,0,-10,0,10,-20,-20
+KDP,Keurig Dr Pepper Inc,US,Manufacture of soft drinks; production of mineral waters and other bottled waters,Mixed,-30,-30,0,-40,10,-50,0,25,0,50,-20
+KEY,KeyCorp,US,Other monetary intermediation,Mixed,-30,0,0,10,20,0,-10,25,10,0,0
+KEYS,Keysight Technologies Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,10,-40,30,10,10,0,20,0,-30,0
+KHC,Kraft Heinz Co,US,Manufacture of other food products n.e.c.,Mixed,-30,0,0,-20,10,0,-30,0,0,-20,-20
+KIM,Kimco Realty Corporation,US,Real estate activities with own or leased property,Mixed,10,40,0,0,10,-40,0,25,0,0,-30
+KKR,KKR & Co LP,US,Fund management activities,Mixed,-20,-50,-20,-50,20,20,-10,-30,0,-10,0
+KLAC,KLA-Tencor Corporation,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,-20,0,30,10,0,0,0,0,-20,-20
+KMB,Kimberly-Clark Corporation,US,"Manufacture of pulp, paper and paperboard",Mixed,-40,30,0,-30,20,0,10,25,0,-40,-20
+KMI,Kinder Morgan Inc,US,Transport via pipeline,Mixed,-30,-20,-10,-40,-70,10,-20,-60,0,-20,-10
+KMX,CarMax Inc,US,Sale of motor vehicles,Mixed,-20,20,0,0,0,10,0,0,-20,0,0
+KO,The Coca-Cola Company,US,Manufacture of soft drinks; production of mineral waters and other bottled waters,Mixed,-30,-20,0,-40,-30,0,-20,-10,0,-20,-30
+KR,Kroger Company,US,"Retail sale in non-specialized stores with food, beverages or tobacco predominating",Mixed,-30,-20,0,0,30,-50,-20,25,0,-20,-20
+KVUE,Kenvue Inc.,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,30,0,0,-10,20,0,-30,0,0,-20,10
+L,Loews Corp,US,Activities of holding companies,Mixed,-10,10,0,-20,10,-20,0,0,0,-10,-20
+LDOS,Leidos Holdings Inc,US,Architectural and engineering activities and related technical consultancy,Mixed,-30,-20,-60,0,30,-30,0,25,0,0,-40
+LEN,Lennar Corporation,US,Construction of buildings,Mixed,-20,-20,10,-40,20,-60,-20,10,-60,-20,-20
+LH,Laboratory Corporation of America Holdings,US,Other human health activities,Mixed,-30,-30,-10,-30,30,-30,-30,0,0,-10,-20
+LHX,L3Harris Technologies Inc,US,Manufacture of communication equipment,Mixed,-40,10,-70,-20,0,10,0,25,0,-20,-10
+LII,Lennox International Inc,US,Manufacture of domestic appliances,Mixed,0,30,0,-10,30,30,0,0,0,-20,-10
+LIN,Linde plc Ordinary Shares,US,Manufacture of basic chemicals,Mixed,-30,-30,-10,-20,10,0,0,25,0,-10,-20
+LKQ,LKQ Corporation,US,Wholesale of waste and scrap and other products n.e.c.,Mixed,-20,-10,10,0,10,0,0,0,0,-20,50
+LLY,Eli Lilly and Company,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-40,-30,10,-40,40,10,-30,25,-20,-30,-20
+LMT,Lockheed Martin Corporation,US,Manufacture of air and spacecraft and related machinery,Mixed,-40,-30,-90,-10,0,20,0,-25,0,-20,-20
+LNT,Alliant Energy Corp,US,"Electric power generation, transmission and distribution",Mixed,30,10,0,30,10,10,10,25,0,-10,-20
+LOW,Lowe's Companies Inc,US,"Retail sale of hardware, paints and glass in specialized stores",Mixed,0,-30,10,-40,10,-20,0,-10,0,-20,-20
+LRCX,Lam Research Corp,US,Manufacture of other special-purpose machinery,Mixed,-30,10,0,10,10,20,0,0,0,0,-10
+LULU,Lululemon Athletica Inc.,US,"Retail sale of clothing, footwear and leather articles in specialized stores",Mixed,-30,0,0,-40,30,-30,-20,-25,0,-20,10
+LUV,Southwest Airlines Company,US,Passenger air transport,Mixed,-30,-30,0,-20,10,-40,0,0,0,0,-20
+LVS,Las Vegas Sands Corp,US,Gambling and betting activities,Mixed,-30,-30,0,-20,10,10,0,0,0,-10,-20
+LW,Lamb Weston Holdings Inc,US,Processing and preserving of fruit and vegetables,Mixed,-30,-20,0,-20,0,-10,0,0,0,-20,-20
+LYB,LyondellBasell Industries NV,US,Manufacture of plastics and synthetic rubber in primary forms,Mixed,-30,-20,0,-20,-10,0,0,25,0,-30,20
+LYV,Live Nation Entertainment Inc,US,"Creative, arts and entertainment activities",Mixed,-30,-40,0,-20,0,-30,0,0,-10,-10,-20
+MA,Mastercard Inc,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,30,-40,10,-20,20,30,10,30,20,0,0
+MAA,Mid-America Apartment Communities Inc,US,Real estate activities with own or leased property,Mixed,-30,-50,0,-20,10,10,0,0,0,0,-20
+MAR,Marriott International Inc,US,Short term accommodation activities,Mixed,-30,-60,10,0,10,-50,10,-30,-40,-40,-20
+MAS,Masco Corporation,US,"Wholesale of construction materials, hardware, plumbing and heating equipment and supplies",Mixed,40,10,0,-30,10,0,0,0,0,-30,-30
+MCD,McDonald’s Corporation,US,Restaurants and mobile food service activities,Mixed,-30,-30,-10,-30,-20,-20,-20,0,0,-20,-20
+MCHP,Microchip Technology Inc,US,Manufacture of electronic components and boards,Mixed,-30,0,0,-20,10,0,0,0,0,-20,0
+MCK,McKesson Corporation,US,Wholesale of other household goods,Mixed,-30,-20,0,-30,30,10,0,-10,0,10,-20
+MCO,Moodys Corporation,US,Administration of financial markets,Mixed,60,20,0,40,0,30,0,0,0,0,-20
+MDLZ,Mondelez International Inc,US,"Manufacture of cocoa, chocolate and sugar confectionery",Mixed,-30,-40,-10,0,0,-10,-20,0,0,-50,-20
+MDT,Medtronic PLC,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-20,0,30,40,0,-20,25,0,-20,0
+MET,MetLife Inc,US,Life insurance,Mixed,40,-20,0,-30,20,0,10,25,10,0,0
+META,Meta Platforms Inc.,US,Web portals,Mixed,40,-40,-20,-30,-20,-50,-10,0,0,-20,-10
+MGM,MGM Resorts International,US,Short term accommodation activities,Mixed,30,10,0,20,-20,-30,-10,25,10,-10,-20
+MHK,Mohawk Industries Inc,US,Manufacture of other porcelain and ceramic products,Mixed,-30,-30,-10,-40,-30,0,-10,25,0,-30,30
+MKC,McCormick & Company Incorporated,US,Manufacture of other food products n.e.c.,Mixed,-30,10,10,-10,20,0,-10,25,0,-30,-30
+MKTX,MarketAxess Holdings Inc,US,Administration of financial markets,Mixed,-20,10,0,-10,0,40,0,25,0,0,0
+MLM,Martin Marietta Materials Inc,US,"Quarrying of stone, sand and clay",Mixed,-40,-20,0,-30,-10,0,10,-10,0,-10,-20
+MMC,Marsh & McLennan Companies Inc,US,Activities of insurance agents and brokers,Mixed,-20,-30,0,20,20,10,0,10,0,0,0
+MMM,3M Company,US,Manufacture of other chemical products n.e.c.,Mixed,-30,-70,-30,0,30,0,-20,25,0,-30,-20
+MNST,Monster Beverage Corp,US,Manufacture of soft drinks; production of mineral waters and other bottled waters,Mixed,-30,0,0,-50,-30,10,-10,0,0,-30,-20
+MO,Altria Group,US,Manufacture of tobacco products,Mixed,-30,-30,0,-10,-70,-10,-10,0,0,-30,-20
+MOH,Molina Healthcare Inc,US,Life insurance,Mixed,10,-50,0,-10,40,-60,0,25,10,0,-10
+MOS,The Mosaic Company,US,Manufacture of fertilizers and nitrogen compounds,Mixed,-30,-20,0,-50,-10,0,0,25,0,-20,-20
+MPC,Marathon Petroleum Corp,US,Manufacture of refined petroleum products,Mixed,-40,10,-20,-20,-30,-40,-20,-25,-10,0,-20
+MPWR,Monolithic Power Systems Inc,US,Manufacture of electronic components and boards,Mixed,-30,-20,0,-10,10,0,0,0,0,-30,10
+MRK,Merck & Company Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-10,0,10,40,10,-20,25,0,-30,0
+MRNA,Moderna Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,30,-30,-20,10,40,0,0,0,0,0,0
+MS,Morgan Stanley,US,Security and commodity contracts brokerage,Mixed,-40,-60,-20,-30,10,-60,-10,25,-20,0,-20
+MSCI,MSCI Inc,US,Fund management activities,Mixed,40,40,-10,40,0,30,0,0,0,0,0
+MSFT,Microsoft Corporation,US,Computer programming activities,Mixed,30,10,-60,-20,30,-30,10,50,30,-20,30
+MSI,Motorola Solutions Inc,US,Manufacture of communication equipment,Mixed,-30,10,0,-10,10,10,0,-10,0,-30,10
+MTB,M&T Bank Corporation,US,Other monetary intermediation,Mixed,10,0,0,-30,10,-50,0,25,20,0,0
+MTCH,Match Group Inc,US,Web portals,Mixed,-10,-50,0,-20,10,-20,0,25,0,0,0
+MTD,Mettler-Toledo International Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,40,10,0,-20,10,20,0,0,0,-20,-20
+MU,Micron Technology Inc,US,Manufacture of electronic components and boards,Mixed,-40,-20,0,-20,0,10,0,25,0,10,0
+NCLH,Norwegian Cruise Line Holdings Ltd,US,Sea and coastal passenger water transport,Mixed,-30,10,0,-30,0,0,-10,25,0,-30,-20
+NDAQ,Nasdaq Inc,US,Administration of financial markets,Mixed,40,40,0,20,0,30,0,10,0,0,0
+NDSN,Nordson Corporation,US,Manufacture of other general-purpose machinery,Mixed,-40,10,0,-30,20,10,0,0,0,-20,10
+NEE,Nextera Energy Inc,US,"Electric power generation, transmission and distribution",Mixed,30,-20,0,0,10,10,-10,-30,0,0,0
+NEM,Newmont Goldcorp Corp,US,Mining of other non-ferrous metal ores,Mixed,-30,-10,10,-20,10,0,-20,25,0,-40,-20
+NFLX,Netflix Inc,US,"Motion picture, video and television programme distribution activities",Mixed,-30,-20,0,-20,0,-30,0,25,0,0,0
+NI,NiSource Inc,US,"Electric power generation, transmission and distribution",Mixed,-30,10,0,-20,10,10,0,25,0,0,0
+NKE,Nike Inc,US,"Manufacture of wearing apparel, except fur apparel",Mixed,-30,-30,0,-30,20,-30,-20,25,0,-30,0
+NOC,Northrop Grumman Corporation,US,Manufacture of air and spacecraft and related machinery,Mixed,-40,-20,-80,-40,0,-30,0,25,0,-30,-20
+NOW,ServiceNow Inc,US,Computer programming activities,Mixed,30,-20,-20,20,20,-20,0,0,0,0,0
+NRG,NRG Energy Inc.,US,"Electric power generation, transmission and distribution",Mixed,-30,-20,-10,10,-20,20,0,25,0,-10,-10
+NSC,Norfolk Southern Corporation,US,Freight rail transport,Mixed,0,-30,0,-30,-10,0,-10,25,0,-10,-20
+NTAP,NetApp Inc,US,"Wholesale of computers, computer peripheral equipment and software",Mixed,-30,10,-20,10,10,40,0,0,0,-30,30
+NTRS,Northern Trust Corporation,US,Other monetary intermediation,Mixed,-20,20,0,0,10,-40,10,25,-20,0,-20
+NUE,Nucor Corp,US,Manufacture of basic iron and steel,Mixed,-30,-10,-20,10,10,-10,0,-25,0,-20,30
+NVDA,NVIDIA Corporation,US,Manufacture of electronic components and boards,Mixed,0,-20,-40,-10,20,0,0,0,0,-30,-20
+NVR,NVR Inc,US,Construction of buildings,Mixed,-30,-30,0,-40,0,0,-10,0,0,-30,-20
+NWS,News Corp B,US,"Publishing of newspapers, journals and periodicals",Mixed,-30,-20,0,-30,-10,-10,-10,-10,0,0,60
+NWSA,News Corp A,US,"Publishing of newspapers, journals and periodicals",Mixed,10,0,0,-20,0,-50,0,-25,0,0,30
+NXPI,NXP Semiconductors NV,US,Manufacture of electronic components and boards,Mixed,0,10,-20,0,0,10,0,0,0,-30,-10
+O,Realty Income Corporation,US,Real estate activities with own or leased property,Mixed,10,20,0,10,0,0,0,0,0,0,0
+ODFL,Old Dominion Freight Line Inc,US,Freight transport by road,Mixed,-20,-10,0,-10,10,10,0,0,0,0,-10
+OKE,ONEOK Inc,US,Transport via pipeline,Mixed,-40,20,0,10,0,0,-10,0,0,0,0
+OMC,Omnicom Group Inc,US,Advertising,Mixed,30,-20,-30,-20,10,-40,0,25,0,0,-10
+ON,ON Semiconductor Corporation,US,Manufacture of electronic components and boards,Mixed,30,-20,0,-20,10,10,0,0,0,10,-20
+ORCL,Oracle Corporation,US,Computer programming activities,Mixed,-30,-30,-40,-40,30,-50,30,0,0,-20,0
+ORLY,O’Reilly Automotive Inc,US,Other retail sale of new goods in specialized stores,Mixed,-30,-20,0,-20,0,0,0,0,0,-20,-20
+OTIS,Otis Worldwide Corp,US,Manufacture of lifting and handling equipment,Mixed,-30,40,0,-20,0,10,0,0,0,-10,60
+OXY,Occidental Petroleum Corporation,US,Extraction of crude petroleum,Mixed,-40,-10,0,-40,-10,0,-40,0,0,-20,-20
+PANW,Palo Alto Networks Inc,US,Computer programming activities,Mixed,0,-30,-20,30,0,0,0,25,0,-10,0
+PARA,Paramount Global Class B,US,"Motion picture, video and television programme production activities",Mixed,-30,-30,10,-10,10,-30,10,25,0,-20,-30
+PAYC,Paycom Soft,US,Computer programming activities,Mixed,0,10,0,30,10,-30,10,25,0,0,0
+PAYX,Paychex Inc,US,Combined office administrative service activities,Mixed,0,60,0,10,30,0,0,0,10,0,0
+PCAR,PACCAR Inc,US,Manufacture of motor vehicles,Mixed,-30,-40,0,-20,10,10,0,0,0,-30,10
+PCG,PG&E Corp,US,"Electric power generation, transmission and distribution",Mixed,30,-50,0,0,-10,10,10,50,-10,-20,10
+PEG,Public Service Enterprise Group Inc,US,"Electric power generation, transmission and distribution",Mixed,-20,-20,0,20,10,-10,10,0,0,0,-30
+PEP,PepsiCo Inc,US,Manufacture of soft drinks; production of mineral waters and other bottled waters,Mixed,-30,-20,-10,-20,-30,-30,10,-25,0,10,-20
+PFE,Pfizer Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-30,0,-20,-20,20,-40,0,-10,-30,-20
+PFG,Principal Financial Group Inc,US,Pension funding,Mixed,30,40,0,40,20,20,0,25,10,0,-20
+PG,Procter & Gamble Company,US,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",Mixed,-30,-20,-50,-30,10,-10,-30,0,0,-30,-20
+PGR,Progressive Corp,US,Non-life insurance,Mixed,-20,-10,0,20,0,-20,0,25,0,0,-40
+PH,Parker-Hannifin Corporation,US,Manufacture of other general-purpose machinery,Mixed,-30,10,-40,-20,0,-60,0,0,0,-20,0
+PHM,PulteGroup Inc,US,Construction of buildings,Mixed,-20,-30,0,30,0,10,-20,25,-20,0,-20
+PKG,Packaging Corp of America,US,Manufacture of corrugated paper and paperboard and of containers of paper and paperboard,Mixed,-30,-30,0,0,-10,10,0,10,0,-20,0
+PLD,Prologis Inc,US,Real estate activities with own or leased property,Mixed,30,40,0,10,10,10,10,25,0,0,0
+PLTR,Palantir Technologies Inc. Class A Common Stock,US,Computer programming activities,Mixed,-20,-30,-40,-30,30,-10,0,0,0,0,0
+PM,Philip Morris International Inc,US,Manufacture of tobacco products,Mixed,-30,-50,-10,-40,-60,0,-20,-40,0,-30,-20
+PNC,PNC Financial Services Group Inc,US,Other monetary intermediation,Mixed,-30,10,0,10,10,10,0,25,20,0,0
+PNR,Pentair PLC,US,"Manufacture of other pumps, compressors, taps and valves",Mixed,-30,0,10,-10,40,0,0,25,0,-40,20
+PNW,Pinnacle West Capital Corp,US,"Electric power generation, transmission and distribution",Mixed,-30,10,-10,10,10,10,0,25,0,-20,-30
+PODD,Insulet Corporation,US,Manufacture of medical and dental instruments and supplies,Mixed,-20,20,30,20,40,10,0,0,0,-20,-20
+POOL,Pool Corporation,US,Non-specialized wholesale trade,Mixed,-10,0,0,0,0,0,0,20,0,-10,-30
+PPG,PPG Industries Inc,US,"Manufacture of paints, varnishes and similar coatings, printing ink and mastics",Mixed,-30,-30,-30,-20,0,-30,-10,20,0,-20,-30
+PPL,PPL Corporation,US,"Electric power generation, transmission and distribution",Mixed,-20,-10,0,-20,10,0,0,10,0,0,0
+PRU,Prudential Financial Inc,US,Life insurance,Mixed,-20,-20,0,20,10,-60,0,25,0,0,0
+PSA,Public Storage,US,Real estate activities with own or leased property,Mixed,30,0,0,10,0,0,0,0,0,0,-20
+PSX,Phillips 66,US,Manufacture of refined petroleum products,Mixed,-30,-20,-20,-20,-10,0,-20,25,0,-20,-20
+PTC,PTC Inc,US,Computer programming activities,Mixed,10,10,-20,30,0,40,0,0,0,0,0
+PWR,Quanta Services Inc,US,Construction of other civil engineering projects,Mixed,-20,30,0,0,0,20,0,0,0,-10,-20
+PYPL,PayPal Holdings Inc,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,10,50,0,50,0,-60,0,25,20,0,0
+QCOM,Qualcomm Incorporated,US,Manufacture of electronic components and boards,Mixed,-30,-30,-20,-20,20,10,0,10,0,-30,-20
+RCL,Royal Caribbean Cruises Ltd,US,Sea and coastal passenger water transport,Mixed,-30,-30,0,-10,-10,30,10,25,0,-20,-20
+REG,Regency Centers Corporation,US,Real estate activities with own or leased property,Mixed,-30,20,0,20,10,10,0,25,0,0,-20
+REGN,Regeneron Pharmaceuticals Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-30,-20,20,40,-20,-40,25,0,0,0
+RF,Regions Financial Corporation,US,Other monetary intermediation,Mixed,-20,-40,-20,20,20,20,0,25,-10,0,0
+RJF,Raymond James Financial Inc.,US,Other activities auxiliary to financial service activities,Mixed,0,-40,-20,10,10,0,0,25,-20,0,0
+RL,Ralph Lauren Corp Class A,US,"Manufacture of wearing apparel, except fur apparel",Mixed,-20,-10,0,-30,20,-30,-30,0,0,-20,-20
+RMD,ResMed Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,30,-40,20,-20,40,40,-20,0,0,-30,0
+ROK,Rockwell Automation Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-50,60,0,30,0,0,0,25,0,10,30
+ROL,Rollins Inc,US,Other building and industrial cleaning activities,Mixed,-20,-30,0,-20,10,-10,-20,0,0,0,-20
+ROP,"Roper Technologies, Inc.",US,Computer programming activities,Mixed,-20,-10,10,-10,10,10,0,0,0,-20,-20
+ROST,Ross Stores Inc,US,"Retail sale of clothing, footwear and leather articles in specialized stores",Mixed,-30,0,0,-30,0,0,-10,0,0,-40,-30
+RSG,Republic Services Inc,US,Collection of non-hazardous waste,Mixed,-30,10,0,-20,-10,0,10,0,0,0,30
+RTX,Raytheon Technologies Corp,US,Manufacture of air and spacecraft and related machinery,Mixed,-40,-50,-80,-20,-10,-40,-10,0,0,-40,-20
+RVTY,Revvity Inc.,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-20,-10,0,10,30,30,-10,0,0,-30,-40
+SBAC,SBA Communications Corp,US,Wireless telecommunications activities,Mixed,0,10,0,-20,10,0,0,0,0,0,-70
+SBUX,Starbucks Corporation,US,Restaurants and mobile food service activities,Mixed,-20,-20,0,-20,10,-30,-10,30,0,-70,-20
+SCHW,Charles Schwab Corp,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,10,0,-10,-20,10,-30,0,25,10,0,10
+SHW,Sherwin-Williams Co,US,"Manufacture of paints, varnishes and similar coatings, printing ink and mastics",Mixed,-30,-40,-20,-30,-20,0,-10,25,0,-30,-20
+SJM,JM Smucker Company,US,Manufacture of other food products n.e.c.,Mixed,-20,-20,0,-20,10,0,-10,25,0,-30,-20
+SLB,Schlumberger NV,US,Support activities for petroleum and natural gas extraction,Mixed,-30,-40,-30,-30,-10,10,-20,0,0,-20,-20
+SMCI,Super Micro Computer Inc,US,Manufacture of computers and peripheral equipment,Mixed,0,0,-50,-20,0,-30,0,0,0,-20,0
+SNA,Snap-On Inc,US,Wholesale of other machinery and equipment,Mixed,-30,-20,-30,-20,0,-10,0,0,0,-40,0
+SNPS,Synopsys Inc,US,Computer programming activities,Mixed,-20,20,-30,10,10,20,0,0,0,0,0
+SO,Southern Company,US,"Electric power generation, transmission and distribution",Mixed,-20,-50,0,-10,-10,-40,-10,25,20,-20,-10
+SOLV,Solventum Corp.,US,Manufacture of medical and dental instruments and supplies,Mixed,-20,10,0,-10,30,10,0,0,0,-20,-20
+SPG,Simon Property Group Inc,US,Real estate activities with own or leased property,Mixed,-30,10,0,-20,10,0,0,0,0,0,-10
+SPGI,S&P Global Inc,US,Other information service activities n.e.c.,Mixed,20,-30,0,-20,10,20,0,0,0,0,0
+SRE,Sempra Energy,US,"Electric power generation, transmission and distribution",Mixed,-20,60,0,-10,-20,10,0,-30,0,0,0
+STE,STERIS plc,US,Manufacture of medical and dental instruments and supplies,Mixed,-20,40,-50,0,30,10,10,0,0,-10,-10
+STLD,Steel Dynamics Inc,US,Manufacture of basic iron and steel,Mixed,-30,10,0,-20,10,0,0,-10,0,-10,40
+STT,State Street Corp,US,Activities of holding companies,Mixed,-20,-70,-20,-30,0,0,-10,0,0,0,0
+STX,Seagate Technology PLC,US,Manufacture of computers and peripheral equipment,Mixed,10,-60,-30,-20,0,-40,10,0,0,-30,30
+STZ,Constellation Brands Inc Class A,US,Manufacture of malt liquors and malt,Mixed,0,0,0,-20,-20,0,0,-10,0,-20,30
+SW,Smurfit WestRock plc,US,Manufacture of corrugated paper and paperboard and of containers of paper and paperboard,Mixed,-30,-20,10,-20,10,0,10,-25,0,0,50
+SWK,Stanley Black & Decker Inc,US,Manufacture of power-driven hand tools,Mixed,-30,-20,-40,0,10,0,0,0,0,10,0
+SWKS,Skyworks Solutions Inc,US,Manufacture of electronic components and boards,Mixed,-30,-20,-30,10,10,0,0,0,0,0,-20
+SYF,Synchrony Financial,US,Other credit granting,Mixed,10,-10,10,30,-50,10,10,25,10,-10,0
+SYK,Stryker Corporation,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-30,-10,-20,30,10,0,0,0,-30,30
+SYY,Sysco Corporation,US,"Wholesale of food, beverages and tobacco",Mixed,-30,20,-10,-60,-20,-70,-20,25,0,-30,-20
+T,AT&T Inc,US,Wireless telecommunications activities,Mixed,-30,-30,-30,10,20,-60,0,25,0,-20,-30
+TAP,Molson Coors Brewing Co Class B,US,Manufacture of malt liquors and malt,Mixed,-30,20,0,-30,-20,10,10,-10,0,-20,30
+TDG,Transdigm Group Incorporated,US,Manufacture of air and spacecraft and related machinery,Mixed,-40,-80,-50,-20,0,-10,0,0,0,-10,0
+TDY,Teledyne Technologies Incorporated,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,-20,-60,10,10,10,0,0,0,-30,-40
+TECH,Bio-Techne Corp,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-20,10,0,-20,30,0,-20,0,0,-20,-20
+TEL,TE Connectivity Ltd,US,Manufacture of electronic components and boards,Mixed,40,-10,-40,10,20,10,0,25,0,-10,0
+TER,Teradyne Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,-30,20,-20,30,0,10,0,0,0,-30,-40
+TFC,Truist Financial Corp,US,Other monetary intermediation,Mixed,-30,0,-20,30,10,-60,0,25,20,-20,-20
+TFX,Teleflex Incorporated,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-20,-20,-10,20,0,0,0,0,-20,-20
+TGT,Target Corporation,US,"Retail sale in non-specialized stores with food, beverages or tobacco predominating",Mixed,-20,20,0,0,20,20,-20,-25,0,-30,-20
+TJX,The TJX Companies Inc,US,"Retail sale of clothing, footwear and leather articles in specialized stores",Mixed,-40,-20,0,-30,0,-20,-10,0,0,-30,-20
+TMO,Thermo Fisher Scientific Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,10,-20,-10,0,30,10,-20,10,0,-10,30
+TMUS,T-Mobile US Inc,US,Wireless telecommunications activities,Mixed,30,-50,-20,-10,20,-40,10,30,0,-20,-20
+TPL,Texas Pacific Land Trust,US,Real estate activities with own or leased property,Mixed,-30,10,0,10,-10,0,-10,0,0,0,-10
+TPR,Tapestry Inc,US,"Retail sale of clothing, footwear and leather articles in specialized stores",Mixed,30,40,0,-20,0,0,-20,25,0,-20,40
+TRGP,Targa Resources Inc,US,Transport via pipeline,Mixed,-30,-30,0,-30,-20,-10,-20,0,0,0,-10
+TRMB,Trimble Inc,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,30,30,-20,10,0,20,0,25,0,-20,-10
+TROW,T. Rowe Price Group Inc,US,Fund management activities,Mixed,-20,20,-10,20,0,10,0,25,0,0,-10
+TRV,The Travelers Companies Inc,US,Non-life insurance,Mixed,-20,-30,0,20,10,0,0,-10,-10,0,0
+TSCO,Tractor Supply Company,US,Other retail sale of new goods in specialized stores,Mixed,-30,20,0,-30,-10,0,-10,0,0,-30,-20
+TSLA,Tesla Inc,US,Manufacture of motor vehicles,Mixed,-10,-50,-20,-50,-20,0,-20,25,0,-10,40
+TSN,Tyson Foods Inc,US,Processing and preserving of meat,Mixed,0,-40,0,-10,-20,-40,-30,25,0,-50,-30
+TT,Trane Technologies plc,US,Manufacture of other general-purpose machinery,Mixed,50,10,0,30,30,20,0,25,0,10,-20
+TTWO,Take-Two Interactive Software Inc,US,Software publishing,Mixed,-30,-20,0,-20,10,-50,0,25,0,0,0
+TXN,Texas Instruments Incorporated,US,Manufacture of electronic components and boards,Mixed,-30,40,-20,-20,10,0,0,25,10,-30,10
+TXT,Textron Inc,US,Manufacture of air and spacecraft and related machinery,Mixed,-20,-20,-60,-20,-10,10,0,25,0,-20,-20
+TYL,Tyler Technologies Inc,US,Computer programming activities,Mixed,0,10,10,10,10,0,0,0,10,0,0
+UAL,United Airlines Holdings Inc,US,Passenger air transport,Mixed,-30,-20,0,-20,10,-40,0,-20,0,-10,-20
+UBER,Uber Technologies Inc,US,Other passenger land transport,Mixed,-20,-60,0,-30,20,-50,0,-10,-20,-10,-20
+UDR,UDR Inc,US,Real estate activities with own or leased property,Mixed,30,60,0,10,10,20,0,-10,0,0,-40
+UHS,Universal Health Services Inc,US,Hospital activities,Mixed,-30,-70,0,-40,20,-40,0,0,0,-10,-20
+ULTA,Ulta Beauty Inc,US,"Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles in specialized stores",Mixed,-30,-20,0,0,20,0,10,25,0,-30,-20
+UNH,UnitedHealth Group Incorporated,US,Life insurance,Mixed,-30,-30,0,10,40,-60,0,25,10,-20,10
+UNP,Union Pacific Corporation,US,Freight rail transport,Mixed,-30,-20,-10,-30,-10,20,0,25,0,0,0
+UPS,United Parcel Service Inc,US,Courier activities,Mixed,-30,-20,-10,-20,30,-50,0,25,0,-10,-20
+URI,United Rentals Inc,US,"Renting and leasing of other machinery, equipment and tangible goods",Mixed,-30,-30,0,-20,10,10,0,0,0,-20,0
+USB,U.S. Bancorp,US,Other monetary intermediation,Mixed,20,-20,10,-30,10,30,0,25,20,0,20
+V,Visa Inc. Class A,US,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Mixed,10,30,10,20,0,40,10,25,20,0,10
+VICI,VICI Properties Inc,US,Real estate activities with own or leased property,Mixed,0,0,0,0,0,10,0,25,0,0,-20
+VLO,Valero Energy Corporation,US,Manufacture of refined petroleum products,Mixed,-40,-30,-20,-20,-30,0,-10,-25,0,-20,-20
+VLTO,Veralto Corporation,US,"Other professional, scientific and technical activities n.e.c.",Mixed,-30,40,0,10,40,10,0,20,0,-20,-10
+VMC,Vulcan Materials Company,US,"Quarrying of stone, sand and clay",Mixed,-30,-10,0,-20,-20,0,10,25,0,-20,-20
+VRSK,Verisk Analytics Inc,US,"Data processing, hosting and related activities",Mixed,0,30,0,20,20,-30,0,0,0,0,0
+VRSN,VeriSign Inc,US,"Data processing, hosting and related activities",Mixed,0,-10,0,0,10,-30,0,0,0,0,0
+VRTX,Vertex Pharmaceuticals Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,0,10,0,40,20,0,-40,25,0,0,-20
+VST,Vistra Energy Corp,US,"Electric power generation, transmission and distribution",Mixed,-30,-20,0,-30,-10,0,0,25,0,-20,-10
+VTR,Ventas Inc,US,Real estate activities with own or leased property,Mixed,10,-10,0,-10,30,0,0,0,0,0,0
+VTRS,Viatris Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-30,-40,0,0,30,0,-10,25,0,-10,-20
+VZ,Verizon Communications Inc,US,Wireless telecommunications activities,Mixed,-30,-40,-30,-20,30,-40,0,40,10,-20,-20
+WAB,Westinghouse Air Brake Technologies Corp,US,Manufacture of railway locomotives and rolling stock,Mixed,-30,-20,-10,-20,0,0,0,0,0,-10,30
+WAT,Waters Corporation,US,"Manufacture of measuring, testing, navigating and control equipment",Mixed,30,20,-20,10,20,10,-10,0,0,-30,30
+WBA,Walgreens Boots Alliance Inc,US,"Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles in specialized stores",Mixed,-30,-30,0,-20,30,-30,-10,25,0,0,0
+WBD,Warner Bros Discovery Inc,US,"Motion picture, video and television programme production activities",Mixed,-30,-20,10,-20,10,-30,0,25,0,-10,-20
+WDAY,Workday Inc,US,Computer programming activities,Mixed,30,60,-10,20,10,0,10,0,0,0,0
+WDC,Western Digital Corporation,US,Manufacture of computers and peripheral equipment,Mixed,-30,20,-20,-20,0,-70,0,0,0,-10,-20
+WEC,WEC Energy Group Inc,US,"Electric power generation, transmission and distribution",Mixed,-30,20,0,-20,-10,20,0,25,0,-10,0
+WELL,Welltower Inc,US,Real estate activities with own or leased property,Mixed,-30,-20,0,-20,20,0,0,25,0,0,-20
+WFC,Wells Fargo & Company,US,Other monetary intermediation,Mixed,-40,-30,-20,-30,0,-30,0,25,-20,-10,-10
+WM,Waste Management Inc,US,Collection of non-hazardous waste,Mixed,30,40,0,-30,10,-10,10,-25,0,0,40
+WMB,Williams Companies Inc,US,Transport via pipeline,Mixed,-40,-20,0,-10,0,0,10,25,0,0,-20
+WMT,Walmart Inc,US,"Retail sale in non-specialized stores with food, beverages or tobacco predominating",Mixed,-30,-20,0,-30,30,10,-20,0,10,-30,-20
+WRB,W. R. Berkley Corp,US,Non-life insurance,Mixed,10,0,0,-20,10,-40,0,0,0,0,0
+WST,West Pharmaceutical Services Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-20,10,0,0,30,10,0,0,0,-10,-10
+WTW,Willis Towers Watson PLC,US,Activities of insurance agents and brokers,Mixed,-30,0,0,-10,20,10,0,0,0,0,0
+WY,Weyerhaeuser Company,US,Silviculture and other forestry activities,Mixed,30,-20,0,-20,-10,0,10,25,0,-20,-20
+WYNN,Wynn Resorts Limited,US,Short term accommodation activities,Mixed,-30,-30,0,20,0,0,10,25,0,-20,-30
+XEL,Xcel Energy Inc,US,"Electric power generation, transmission and distribution",Mixed,-40,30,-10,20,-10,20,10,25,0,-10,-20
+XOM,Exxon Mobil Corp,US,Extraction of crude petroleum,Mixed,-30,-40,-10,-40,-40,-30,0,-25,-10,-20,-30
+XYL,Xylem Inc,US,"Manufacture of other pumps, compressors, taps and valves",Mixed,40,0,0,10,30,30,0,50,0,-30,30
+YUM,Yum! Brands Inc,US,Restaurants and mobile food service activities,Mixed,-30,-30,0,-30,-20,-40,-20,25,0,-20,-30
+ZBH,Zimmer Biomet Holdings Inc,US,Manufacture of medical and dental instruments and supplies,Mixed,-30,-30,-20,-20,0,0,0,25,0,-40,-30
+ZBRA,Zebra Technologies Corporation,US,Manufacture of computers and peripheral equipment,Mixed,-30,30,-10,40,20,20,0,0,0,-20,-20
+ZTS,Zoetis Inc,US,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Mixed,-40,10,-10,-20,20,10,-20,25,0,-20,10

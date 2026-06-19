@@ -1,0 +1,7 @@
+comparison,count,tickers,interpretation
+overlap_v1_top_and_index_high,15,"ATO, AVGO, CB, CNP, CTRA, CVX, ITW, MMM, NDSN, NRG, PNC, PNW, TSLA, WFC, WYNN",Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.
+overlap_v1_top_and_v2_positive,9,"AVGO, CVX, ITW, MMM, NRG, PCAR, TSLA, WFC, WYNN",Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.
+overlap_index_high_and_v2_positive,8,"AVGO, CVX, ITW, MMM, NRG, TSLA, WFC, WYNN",Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.
+v1_top_not_index,11,"AAPL, ABT, AIZ, AMZN, CINF, EQIX, EXR, MCHP, MTB, PCAR, SPG",Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.
+index_high_not_v1,11,"CMS, DLTR, DUK, DVN, EFX, FTV, HBAN, OXY, STT, VLO, XOM",Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.
+v2_positive_not_v1,0,,Non-overlap is useful because it shows the new index is not merely copying the v1 model or a single ESG rating source.

@@ -1,0 +1,116 @@
+{
+  "run_mode": "smoke",
+  "rows_completed": 10,
+  "results_so_far": [
+    {
+      "feature_set": "baseline",
+      "model": "DummyClassifier",
+      "model_key": "baseline",
+      "mean_roc_auc": 0.5833333333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.1076923076923077,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.2222222222222222,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "baseline",
+      "model": "Logistic Regression",
+      "model_key": "lr",
+      "mean_roc_auc": 0.9010416666666666,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.6597744360902256,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.5,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "baseline",
+      "model": "LightGBM",
+      "model_key": "lgbm",
+      "mean_roc_auc": 0.8802083333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.69,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.5,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "baseline",
+      "model": "XGBoost",
+      "model_key": "xgb",
+      "mean_roc_auc": 0.8958333333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.6496212121212122,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.6,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "baseline",
+      "model": "Random Forest",
+      "model_key": "rf",
+      "mean_roc_auc": 0.9192708333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.47023809523809523,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.3333333333333333,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "semantic",
+      "model": "DummyClassifier",
+      "model_key": "baseline",
+      "mean_roc_auc": 0.5833333333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.1076923076923077,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.2222222222222222,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "semantic",
+      "model": "Logistic Regression",
+      "model_key": "lr",
+      "mean_roc_auc": 0.90625,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.7954545454545454,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.75,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "semantic",
+      "model": "LightGBM",
+      "model_key": "lgbm",
+      "mean_roc_auc": 0.90625,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.7,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.5714285714285714,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "semantic",
+      "model": "XGBoost",
+      "model_key": "xgb",
+      "mean_roc_auc": 0.9427083333333334,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.6810897435897436,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.6,
+      "std_f1": 0.0
+    },
+    {
+      "feature_set": "semantic",
+      "model": "Random Forest",
+      "model_key": "rf",
+      "mean_roc_auc": 0.9114583333333333,
+      "std_roc_auc": 0.0,
+      "mean_pr_auc": 0.37380952380952376,
+      "std_pr_auc": 0.0,
+      "mean_f1": 0.2857142857142857,
+      "std_f1": 0.0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+feature_set,model,mean_roc_auc,std_roc_auc,mean_pr_auc,std_pr_auc,mean_f1,std_f1,delta_roc_auc_vs_baseline_14,delta_pr_auc_vs_baseline_14,delta_f1_vs_baseline_14,interpretation
+baseline,DummyClassifier,0.5833,0.0,0.1077,0.0,0.2222,0.0,0.0,0.0,0.0,Original 14-feature reference model using Talk + Walk / External + Context features.
+baseline,Logistic Regression,0.901,0.0,0.6598,0.0,0.5,0.0,0.0,0.0,0.0,Original 14-feature reference model using Talk + Walk / External + Context features.
+baseline,LightGBM,0.8802,0.0,0.69,0.0,0.5,0.0,0.0,0.0,0.0,Original 14-feature reference model using Talk + Walk / External + Context features.
+baseline,XGBoost,0.8958,0.0,0.6496,0.0,0.6,0.0,0.0,0.0,0.0,Original 14-feature reference model using Talk + Walk / External + Context features.
+baseline,Random Forest,0.9193,0.0,0.4702,0.0,0.3333,0.0,0.0,0.0,0.0,Original 14-feature reference model using Talk + Walk / External + Context features.
+semantic,DummyClassifier,0.5833,0.0,0.1077,0.0,0.2222,0.0,0.0,0.0,0.0,Semantic features matched or improved ROC-AUC while adding interpretive depth for AI-rewritten ESG disclosure robustness.
+semantic,Logistic Regression,0.9062,0.0,0.7955,0.0,0.75,0.0,0.0052,0.1357,0.25,Semantic features matched or improved ROC-AUC while adding interpretive depth for AI-rewritten ESG disclosure robustness.
+semantic,LightGBM,0.9062,0.0,0.7,0.0,0.5714,0.0,0.026,0.01,0.0714,Semantic features matched or improved ROC-AUC while adding interpretive depth for AI-rewritten ESG disclosure robustness.
+semantic,XGBoost,0.9427,0.0,0.6811,0.0,0.6,0.0,0.0469,0.0315,0.0,Semantic features matched or improved ROC-AUC while adding interpretive depth for AI-rewritten ESG disclosure robustness.
+semantic,Random Forest,0.9115,0.0,0.3738,0.0,0.2857,0.0,-0.0078,-0.0964,-0.0476,"Semantic features did not improve ROC-AUC on this dataset. Their added value is interpretive depth and robustness against AI-rewritten disclosure, as shown in the adversarial test. Treat semantic features as complementary, not replacement."

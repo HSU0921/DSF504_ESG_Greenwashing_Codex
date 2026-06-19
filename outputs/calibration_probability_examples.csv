@@ -1,0 +1,13 @@
+ticker,label,sector,industry,year,uncalibrated_probability,sigmoid_probability,isotonic_probability
+MTB,1,Financial Services,Banks - Regional,2022,0.999999,0.841289,1.0
+TSLA,1,Consumer Cyclical,Auto Manufacturers,2021,0.999998,0.841288,1.0
+NRG,1,Utilities,Utilities - Independent Power Producers,2022,0.99997,0.841267,1.0
+AAPL,1,Technology,Consumer Electronics,2023,0.99993,0.841237,0.999983
+MCHP,1,Technology,Semiconductors,2021,0.999897,0.841212,0.999951
+CB,1,Financial Services,Insurance - Property & Casualty,2022,0.999863,0.841186,0.999917
+ATO,0,Utilities,Utilities - Regulated Gas,2022,0.000155,0.017458,7.6e-05
+CTRA,0,Energy,Oil & Gas E&P,2022,9.6e-05,0.017452,2.9e-05
+PCG,0,Utilities,Utilities - Regulated Electric,2022,5.1e-05,0.017447,3e-06
+INCY,0,Healthcare,Biotechnology,2022,4.2e-05,0.017447,0.0
+MGM,0,Consumer Cyclical,Resorts & Casinos,2022,3.3e-05,0.017446,0.0
+EFX,0,Industrials,Consulting Services,2022,1.8e-05,0.017444,0.0

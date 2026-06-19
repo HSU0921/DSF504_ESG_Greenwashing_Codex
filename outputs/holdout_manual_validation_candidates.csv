@@ -1,0 +1,79 @@
+company,symbol,sector,true_label,model_risk_score,model_rank
+M&t Bank Corp.,MTB,Financial Services,1,0.9999990736311402,1
+"Tesla, Inc.",TSLA,Consumer Cyclical,1,0.9999982906493643,2
+"Nrg Energy, Inc.",NRG,Utilities,1,0.9999700830847594,3
+Apple Inc.,AAPL,Technology,1,0.9999299854088147,4
+Microchip Technology Inc,MCHP,Technology,1,0.9998970854996324,5
+Chubb Limited,CB,Financial Services,1,0.9998630185544447,6
+Atmos Energy Corporation,ATO,Utilities,0,0.0001548244396647688,7
+Coterra Energy Inc.,CTRA,Energy,0,9.645015559691308e-05,8
+Pg&e Corporation,PCG,Utilities,0,5.086191299853029e-05,9
+Incyte Genomics Inc,INCY,Healthcare,0,4.1894317104213726e-05,10
+Mgm Resorts International,MGM,Consumer Cyclical,0,3.267653599017489e-05,11
+"Equifax, Incorporated",EFX,Industrials,0,1.7805520523082465e-05,12
+"Pultegroup, Inc.",PHM,Consumer Cyclical,0,1.6456974793894092e-05,13
+Mettler-Toledo International,MTD,Healthcare,0,1.3184777611185066e-05,14
+"Quanta Services, Inc.",PWR,Industrials,0,1.0885755188551582e-05,15
+Packaging Corp of America,PKG,Consumer Cyclical,0,6.8785344520289485e-06,16
+"Palo Alto Networks, Inc.",PANW,Technology,0,5.971938585863687e-06,17
+"The Interpublic Group of Companies, Inc.",IPG,Communication Services,0,5.772186236278845e-06,18
+Idexx Laboratories Inc,IDXX,Healthcare,0,5.077516772416295e-06,19
+Idex Corporation,IEX,Industrials,0,4.082260912736563e-06,20
+Quest Diagnostics Inc.,DGX,Healthcare,0,4.0221047611993854e-06,21
+"Conagra Brands, Inc.",CAG,Consumer Defensive,0,3.6682640823014023e-06,22
+"American Electric Power Company, Inc.",AEP,Utilities,0,3.608307147247181e-06,23
+Csx Corporation,CSX,Industrials,0,3.460938704614909e-06,24
+"Cbre Group, Inc.",CBRE,Real Estate,0,2.617028339942927e-06,25
+Garmin Ltd,GRMN,Technology,0,2.587284341017745e-06,26
+"Tyson Foods, Inc.",TSN,Consumer Defensive,0,2.539559530746923e-06,27
+A.O. Smith Corporation,AOS,Industrials,0,2.53321483077143e-06,28
+Eqt Corp,EQT,Energy,0,2.481582366792348e-06,29
+Carnival Corporation,CCL,Consumer Cyclical,0,2.393542677620223e-06,30
+"Netapp, Inc",NTAP,Technology,0,2.084713184451379e-06,31
+Southwest Airlines Co.,LUV,Industrials,0,1.968529448125331e-06,32
+Adobe Inc.,ADBE,Technology,0,1.4775433527107824e-06,33
+Accenture Plc,ACN,Technology,0,1.2210534099040344e-06,34
+"Nasdaq, Inc.",NDAQ,Financial Services,0,1.2063204195146975e-06,35
+Intel Corp,INTC,Technology,0,7.965279852447672e-07,36
+Synchrony Financial,SYF,Financial Services,0,7.878287262340757e-07,37
+"Msci, Inc.",MSCI,Financial Services,0,7.449380658254049e-07,38
+U.S. Bancorp,USB,Financial Services,0,5.745942157595628e-07,39
+Akamai Technologies Inc,AKAM,Technology,0,5.074695617998155e-07,40
+"Fidelity National Information Services, Inc.",FIS,Technology,0,4.5358003865577364e-07,41
+Intuitive Surgical Inc.,ISRG,Healthcare,0,4.522866323280959e-07,42
+"Marsh & Mclennan Companies, Inc.",MMC,Financial Services,0,3.1474714496375017e-07,43
+Equity Residential,EQR,Real Estate,0,3.073349238410556e-07,44
+"Paypal Holdings, Inc.",PYPL,Financial Services,0,2.345585454064861e-07,45
+"Eog Resources, Inc.",EOG,Energy,0,2.071010156353054e-07,46
+Avery Dennison Corp.,AVY,Consumer Cyclical,0,2.01102975716627e-07,47
+Vertex Pharmaceuticals Inc,VRTX,Healthcare,0,1.4078808311865628e-07,48
+Freeport-Mcmoran Inc.,FCX,Basic Materials,0,1.1731728459038697e-07,49
+"Expeditors International of Washington, Inc.",EXPD,Industrials,0,1.1433585558857138e-07,50
+Norwegian Cruise Line Holdings Ltd.s,NCLH,Consumer Cyclical,0,1.1267697508943523e-07,51
+"Walgreens Boots Alliance, Inc",WBA,Healthcare,0,1.0033024679754186e-07,52
+W.R. Berkley Corporation,WRB,Financial Services,0,9.54149737752408e-08,53
+Cummins Inc.,CMI,Industrials,0,9.329542804490227e-08,54
+Nvidia Corp,NVDA,Technology,0,9.295214585330011e-08,55
+"Cisco Systems, Inc.",CSCO,Technology,0,9.249947762734242e-08,56
+Intuit Inc,INTU,Technology,0,9.176521004482931e-08,57
+"Verisk Analytics, Inc.",VRSK,Industrials,0,9.079535912889588e-08,58
+Centene Corporation,CNC,Healthcare,0,8.78599343874997e-08,59
+The Charles Schwab Corporation,SCHW,Financial Services,0,8.022379139355878e-08,60
+"Udr, Inc.",UDR,Real Estate,0,7.507336745010237e-08,61
+American Tower Corporation,AMT,Real Estate,0,7.23688891591435e-08,62
+Capital One Financial,COF,Financial Services,0,6.427742471741477e-08,63
+Ameren Corporation,AEE,Utilities,0,5.658388757188206e-08,64
+"Tjx Companies, Inc.",TJX,Consumer Cyclical,0,5.580506999318612e-08,65
+Campbell Soup Company,CPB,Consumer Defensive,0,5.3875120098271726e-08,66
+"Mondelez International, Inc. Class A",MDLZ,Consumer Defensive,0,5.102328969495512e-08,67
+"Rockwell Automation, Inc.",ROK,Industrials,0,5.027430186679574e-08,68
+Iqvia Holdings Inc.,IQV,Healthcare,0,4.8321391194603684e-08,69
+Henry (Jack) & Associates,JKHY,Technology,0,4.565663685479546e-08,70
+Ansys Inc,ANSS,Technology,0,4.535494954038976e-08,71
+"Principal Financial Group, Inc.",PFG,Financial Services,0,4.3221914811041466e-08,72
+"Ameriprise Financial, Inc.",AMP,Financial Services,0,4.1671664193769047e-08,73
+"Mid-America Apartment Communities, Inc.",MAA,Real Estate,0,3.979055872142065e-08,74
+Sba Communications Corp,SBAC,Real Estate,0,3.782607290886e-08,75
+Automatic Data Processing,ADP,Industrials,0,3.710186378961149e-08,76
+Danaher Corporation,DHR,Healthcare,0,2.5238830936854198e-08,77
+"Host Hotels & Resorts, Inc.",HST,Real Estate,0,2.5043155311576e-08,78

@@ -1,0 +1,2 @@
+holdout_n_real_companies,holdout_positive_count,holdout_negative_count,roc_auc,pr_auc,review_priority_threshold,review_priority_top_percent,number_companies_reviewed,tn,fp,fn,tp,threshold_note
+78,6,72,1.0,1.0,9.6e-05,0.1,8,70,2,0,6,Review-priority cutoff selecting the top 10% of the fixed holdout ranking; not a legal classification threshold.

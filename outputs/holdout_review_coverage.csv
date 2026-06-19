@@ -1,0 +1,4 @@
+review_band,review_percent,number_companies_reviewed,true_high_risk_captured,total_holdout_positives,recall,workload_reduction_vs_reviewing_all_78
+Top 10%,0.1,8,6,6,1.0,0.8974358974358975
+Top 20%,0.2,16,6,6,1.0,0.7948717948717949
+Top 30%,0.3,24,6,6,1.0,0.6923076923076923

@@ -1,0 +1,3 @@
+variant,post-processing word count,talk_total_density,density vs training median,model_risk_score
+raw extracted text,94360,4.991522,-50.376 (-91.0%),1.646e-07
+approximate preprocessing,84191,6.520887,-48.847 (-88.2%),1.646e-07
