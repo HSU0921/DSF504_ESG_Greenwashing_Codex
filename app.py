@@ -39,6 +39,8 @@ OUTPUTS = os.path.join(ROOT, "outputs")
 MODELS = os.path.join(ROOT, "models")
 REPORTS = os.path.join(ROOT, "reports")
 DATA_EXTERNAL = os.path.join(ROOT, "data_external")
+ASSETS = os.path.join(ROOT, "assets")
+PDF_FONT_DIR = os.path.join(ASSETS, "fonts")
 sys.path.insert(0, ROOT)
 
 FEATURE_ORDER = [
@@ -675,58 +677,14 @@ PROJECT_PDF_REPORTS = {
 
 
 PDF_UNICODE_FONT_CANDIDATES = [
-    ("Noto Sans CJK TC", "/Library/Fonts/NotoSansCJKtc-Regular.otf"),
-    ("Noto Sans CJK TC", "/System/Library/Fonts/Supplemental/NotoSansCJKtc-Regular.otf"),
-    ("Noto Sans CJK SC", "/Library/Fonts/NotoSansCJKsc-Regular.otf"),
-    ("Source Han Sans TC", "/Library/Fonts/SourceHanSansTC-Regular.otf"),
-    ("Source Han Sans TC", "/System/Library/Fonts/Supplemental/SourceHanSansTC-Regular.otf"),
-    ("Microsoft JhengHei", "C:/Windows/Fonts/msjh.ttc"),
-    ("Microsoft JhengHei", "C:/Windows/Fonts/msjh.ttf"),
-    ("PingFang TC", "/System/Library/Fonts/PingFang.ttc"),
-    ("PingFang TC", "/System/Library/Fonts/PingFangTC.ttc"),
-    ("Arial Unicode MS", "/Library/Fonts/Arial Unicode.ttf"),
-    ("Arial Unicode MS", "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
-    ("AppleGothic", "/System/Library/Fonts/Supplemental/AppleGothic.ttf"),
-    ("Heiti TC", "/System/Library/Fonts/STHeiti Medium.ttc"),
-    ("Heiti TC", "/System/Library/Fonts/STHeiti Light.ttc"),
+    ("Noto Sans CJK TC", os.path.join(PDF_FONT_DIR, "NotoSansCJKtc-Regular.otf")),
+    ("Source Han Sans TC", os.path.join(PDF_FONT_DIR, "SourceHanSansTC-Regular.otf")),
 ]
 
 
 @lru_cache(maxsize=1)
 def _pdf_unicode_font_candidates() -> tuple[tuple[str, str], ...]:
-    candidates = [(name, path) for name, path in PDF_UNICODE_FONT_CANDIDATES if os.path.exists(path)]
-    seen = {path for _, path in candidates}
-    font_dirs = [
-        "/Library/Fonts",
-        "/System/Library/Fonts",
-        "/System/Library/Fonts/Supplemental",
-        os.path.expanduser("~/Library/Fonts"),
-    ]
-    preferred_names = (
-        "NotoSansCJK",
-        "Noto Sans CJK",
-        "SourceHanSans",
-        "Source Han Sans",
-        "PingFang",
-        "JhengHei",
-        "Arial Unicode",
-        "AppleGothic",
-        "STHeiti",
-    )
-    for font_dir in font_dirs:
-        if not os.path.isdir(font_dir):
-            continue
-        for root, _, files in os.walk(font_dir):
-            for filename in files:
-                if not filename.lower().endswith((".ttf", ".otf", ".ttc")):
-                    continue
-                if not any(name.lower() in filename.lower() for name in preferred_names):
-                    continue
-                path = os.path.join(root, filename)
-                if path not in seen:
-                    candidates.append((os.path.splitext(filename)[0], path))
-                    seen.add(path)
-    return tuple(candidates)
+    return tuple((name, path) for name, path in PDF_UNICODE_FONT_CANDIDATES if os.path.exists(path))
 
 
 @lru_cache(maxsize=1)
@@ -801,16 +759,7 @@ def _matplotlib_font_properties():
     font_candidates = _pdf_unicode_font_candidates()
     if font_candidates:
         return font_manager.FontProperties(fname=font_candidates[0][1])
-    preferred = ("Noto Sans CJK", "PingFang", "Heiti", "AppleGothic", "Microsoft JhengHei", "Arial Unicode", "SimHei")
-    for font_path in font_manager.findSystemFonts():
-        try:
-            prop = font_manager.FontProperties(fname=font_path)
-            name = prop.get_name()
-        except Exception:
-            continue
-        if any(candidate in name for candidate in preferred):
-            return prop
-    return None
+    raise RuntimeError("No bundled Unicode PDF font found under assets/fonts.")
 
 
 def _build_pdf_with_matplotlib(report: dict) -> bytes:
