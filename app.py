@@ -15,10 +15,16 @@ import html
 import os
 import pickle
 import sys
+import tempfile
 import textwrap
 import warnings
 from io import BytesIO
-from datetime import date
+from datetime import date, datetime
+from functools import lru_cache
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+os.environ.setdefault("MPLCONFIGDIR", os.path.join(tempfile.gettempdir(), "dsf504_matplotlib"))
+os.makedirs(os.environ["MPLCONFIGDIR"], exist_ok=True)
 
 import numpy as np
 import pandas as pd
@@ -29,7 +35,6 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 
 warnings.filterwarnings("ignore")
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
 OUTPUTS = os.path.join(ROOT, "outputs")
 MODELS = os.path.join(ROOT, "models")
 REPORTS = os.path.join(ROOT, "reports")
@@ -77,16 +82,16 @@ FEATURE_DISPLAY = {
     "talk_total_density": "ESG Disclosure Intensity",
     "e_s_g_dispersion": "ESG Pillar Imbalance",
     "pct_numeric": "Quantitative Disclosure Ratio",
-    "vague_to_specific_ratio": "Vague vs Specific Language Ratio",
+    "vague_to_specific_ratio": "Disclosure Specificity Ratio",
     "planet_friendly_business": "External Environmental Signal",
     "honest_fair_business": "External Governance / Ethics Signal",
     "E_density": "Environmental Disclosure Density",
     "S_density": "Social Disclosure Density",
     "G_density": "Governance Disclosure Density",
-    "hedge_score": "Vague Commitment Language",
+    "hedge_score": "Hedging Language Score",
     "text_length": "Report Length",
-    "sector_encoded": "Sector Context",
-    "esg_topic_breadth": "ESG Topic Breadth",
+    "sector_encoded": "Industry Sector",
+    "esg_topic_breadth": "ESG Topic Coverage",
 }
 
 FEATURE_BUSINESS_MEANING = {
@@ -94,16 +99,16 @@ FEATURE_BUSINESS_MEANING = {
     "talk_total_density": "Measures the intensity of ESG disclosure language.",
     "e_s_g_dispersion": "Captures imbalance across E, S, and G risk signals.",
     "pct_numeric": "Shows whether claims include measurable evidence.",
-    "vague_to_specific_ratio": "Compares aspirational wording with specific commitments.",
+    "vague_to_specific_ratio": "Compares vague claims with specific, measurable disclosure.",
     "planet_friendly_business": "External signal related to environmental credibility.",
     "honest_fair_business": "External signal related to governance and ethics.",
     "E_density": "Environmental disclosure emphasis in company reports.",
     "S_density": "Social disclosure emphasis in company reports.",
     "G_density": "Governance disclosure emphasis in company reports.",
-    "hedge_score": "Vague commitment language that may require evidence.",
+    "hedge_score": "Hedging language that may require supporting evidence.",
     "text_length": "Report length and disclosure volume.",
-    "sector_encoded": "Sector context used by the model.",
-    "esg_topic_breadth": "Breadth of ESG topics covered in disclosure.",
+    "sector_encoded": "Industry sector context used by the model.",
+    "esg_topic_breadth": "Coverage across ESG disclosure topics.",
 }
 
 SECTORS = [
@@ -669,19 +674,92 @@ PROJECT_PDF_REPORTS = {
 }
 
 
+PDF_UNICODE_FONT_CANDIDATES = [
+    ("Noto Sans CJK TC", "/Library/Fonts/NotoSansCJKtc-Regular.otf"),
+    ("Noto Sans CJK TC", "/System/Library/Fonts/Supplemental/NotoSansCJKtc-Regular.otf"),
+    ("Noto Sans CJK SC", "/Library/Fonts/NotoSansCJKsc-Regular.otf"),
+    ("Source Han Sans TC", "/Library/Fonts/SourceHanSansTC-Regular.otf"),
+    ("Source Han Sans TC", "/System/Library/Fonts/Supplemental/SourceHanSansTC-Regular.otf"),
+    ("Microsoft JhengHei", "C:/Windows/Fonts/msjh.ttc"),
+    ("Microsoft JhengHei", "C:/Windows/Fonts/msjh.ttf"),
+    ("PingFang TC", "/System/Library/Fonts/PingFang.ttc"),
+    ("PingFang TC", "/System/Library/Fonts/PingFangTC.ttc"),
+    ("Arial Unicode MS", "/Library/Fonts/Arial Unicode.ttf"),
+    ("Arial Unicode MS", "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
+    ("AppleGothic", "/System/Library/Fonts/Supplemental/AppleGothic.ttf"),
+    ("Heiti TC", "/System/Library/Fonts/STHeiti Medium.ttc"),
+    ("Heiti TC", "/System/Library/Fonts/STHeiti Light.ttc"),
+]
+
+
+@lru_cache(maxsize=1)
+def _pdf_unicode_font_candidates() -> tuple[tuple[str, str], ...]:
+    candidates = [(name, path) for name, path in PDF_UNICODE_FONT_CANDIDATES if os.path.exists(path)]
+    seen = {path for _, path in candidates}
+    font_dirs = [
+        "/Library/Fonts",
+        "/System/Library/Fonts",
+        "/System/Library/Fonts/Supplemental",
+        os.path.expanduser("~/Library/Fonts"),
+    ]
+    preferred_names = (
+        "NotoSansCJK",
+        "Noto Sans CJK",
+        "SourceHanSans",
+        "Source Han Sans",
+        "PingFang",
+        "JhengHei",
+        "Arial Unicode",
+        "AppleGothic",
+        "STHeiti",
+    )
+    for font_dir in font_dirs:
+        if not os.path.isdir(font_dir):
+            continue
+        for root, _, files in os.walk(font_dir):
+            for filename in files:
+                if not filename.lower().endswith((".ttf", ".otf", ".ttc")):
+                    continue
+                if not any(name.lower() in filename.lower() for name in preferred_names):
+                    continue
+                path = os.path.join(root, filename)
+                if path not in seen:
+                    candidates.append((os.path.splitext(filename)[0], path))
+                    seen.add(path)
+    return tuple(candidates)
+
+
+@lru_cache(maxsize=1)
+def _reportlab_unicode_font_names() -> tuple[str, str]:
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    for index, (font_label, font_path) in enumerate(_pdf_unicode_font_candidates()):
+        regular_name = f"ESGUnicode-{index}"
+        bold_name = f"ESGUnicodeBold-{index}"
+        try:
+            pdfmetrics.registerFont(TTFont(regular_name, font_path))
+            pdfmetrics.registerFont(TTFont(bold_name, font_path))
+            return regular_name, bold_name
+        except Exception:
+            continue
+    raise RuntimeError("No embeddable Unicode PDF font found for bilingual memo output.")
+
+
 def _build_pdf_with_reportlab(report: dict) -> bytes:
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import letter
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
     from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
+    body_font, heading_font = _reportlab_unicode_font_names()
     buffer = BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=letter, rightMargin=48, leftMargin=48, topMargin=46, bottomMargin=42)
     styles = getSampleStyleSheet()
     title_style = ParagraphStyle(
         "ESGTitle",
         parent=styles["Title"],
-        fontName="Helvetica-Bold",
+        fontName=heading_font,
         fontSize=20,
         leading=24,
         textColor=colors.HexColor("#173D2A"),
@@ -690,7 +768,7 @@ def _build_pdf_with_reportlab(report: dict) -> bytes:
     heading_style = ParagraphStyle(
         "ESGHeading",
         parent=styles["Heading2"],
-        fontName="Helvetica-Bold",
+        fontName=heading_font,
         fontSize=13,
         leading=16,
         textColor=colors.HexColor("#1F5C3A"),
@@ -700,7 +778,7 @@ def _build_pdf_with_reportlab(report: dict) -> bytes:
     body_style = ParagraphStyle(
         "ESGBody",
         parent=styles["BodyText"],
-        fontName="Helvetica",
+        fontName=body_font,
         fontSize=9.8,
         leading=13.2,
         textColor=colors.HexColor("#34453A"),
@@ -720,6 +798,9 @@ def _build_pdf_with_reportlab(report: dict) -> bytes:
 def _matplotlib_font_properties():
     from matplotlib import font_manager
 
+    font_candidates = _pdf_unicode_font_candidates()
+    if font_candidates:
+        return font_manager.FontProperties(fname=font_candidates[0][1])
     preferred = ("Noto Sans CJK", "PingFang", "Heiti", "AppleGothic", "Microsoft JhengHei", "Arial Unicode", "SimHei")
     for font_path in font_manager.findSystemFonts():
         try:
@@ -736,6 +817,9 @@ def _build_pdf_with_matplotlib(report: dict) -> bytes:
     import matplotlib
 
     matplotlib.use("Agg")
+    matplotlib.rcParams["pdf.fonttype"] = 42
+    matplotlib.rcParams["ps.fonttype"] = 42
+    matplotlib.rcParams["pdf.use14corefonts"] = False
     import matplotlib.pyplot as plt
     from matplotlib.backends.backend_pdf import PdfPages
 
@@ -1440,48 +1524,6 @@ html,body,[data-testid="stAppViewContainer"]{
 .home-hero-copy{
   padding-right:10px;
 }
-.home-decision-badge{
-  position:absolute;
-  top:18px;
-  right:20px;
-  z-index:3;
-  display:flex;
-  align-items:center;
-  gap:9px;
-  max-width:310px;
-  padding:10px 13px;
-  border-radius:999px;
-  background:rgba(255,255,255,.82);
-  border:1px solid rgba(31,92,58,.16);
-  box-shadow:0 10px 24px rgba(23,61,42,.10);
-  backdrop-filter:blur(10px);
-}
-.home-decision-badge .badge-icon{
-  flex:0 0 26px;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:#EAF4EC;
-  color:#1F5C3A !important;
-  font-size:.92rem;
-  font-weight:900;
-  border:1px solid #CFE4D2;
-}
-.home-decision-badge .badge-text{
-  color:#173D2A;
-  font-size:.86rem;
-  line-height:1.2;
-  font-weight:900;
-}
-.home-decision-badge .badge-text .zh{
-  margin-top:2px;
-  font-size:.78rem;
-  line-height:1.2;
-  color:#5F7165;
-  font-weight:800;
-}
 .botanical{
   min-height:250px;border-radius:24px;border:1px solid #CFE4D2;
   position:relative;
@@ -1768,16 +1810,55 @@ div[data-testid="stVerticalBlockBorderWrapper"]{
 .shap-img{width:100%;border-radius:18px;border:1px solid var(--border);background:#fff;}
 .shap-beeswarm .shap-img{max-height:430px;object-fit:contain;}
 .shap-expanded .shap-img{max-height:none;object-fit:contain;}
+.shap-explain-box{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-top:14px;
+  padding:16px 18px;
+  border:1px solid #CFE4D2;
+  border-left:5px solid var(--green);
+  border-radius:18px;
+  background:linear-gradient(90deg,#EAF4EC,#F9FCF8);
+  color:#173D2A;
+}
+.shap-explain-icon{
+  display:grid;
+  place-items:center;
+  flex:0 0 48px;
+  width:48px;
+  height:38px;
+  border-radius:13px;
+  background:#1F6A43;
+  color:#fff;
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:.04em;
+  line-height:1;
+}
+.shap-explain-title{
+  font-family:var(--serif);
+  font-size:1.18rem;
+  line-height:1.2;
+  font-weight:900;
+  color:var(--primary);
+  margin-bottom:4px;
+}
+.shap-explain-text{
+  font-size:1rem;
+  line-height:1.55;
+  font-weight:720;
+}
 .company-shap-matrix{
   display:grid;
   grid-template-columns:minmax(0,1fr);
-  gap:2rem;
+  gap:2.2rem;
   width:100%;
 }
 .company-shap-row{
   display:block;
   width:100%;
-  padding:2rem 2.2rem;
+  padding:2.15rem 2.35rem;
   margin-bottom:0;
   border-radius:28px;
   background:#FFFFFF;
@@ -1816,50 +1897,74 @@ div[data-testid="stVerticalBlockBorderWrapper"]{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin:1rem 0 1.5rem;
-  padding:1rem;
+  margin:1.05rem 0 1.65rem;
+  padding:1.2rem 1.25rem;
   border:1px solid var(--border);
   border-radius:22px;
   background:#FFFFFF;
   box-sizing:border-box;
+  overflow:visible;
 }
 .company-shap-image-wrap .shap-img{
   width:100%;
-  max-width:980px;
-  height:420px;
+  max-width:1120px;
+  height:540px;
   object-fit:contain;
+  object-position:center;
   display:block;
 }
 .company-shap-detail-grid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:1rem;
-  margin-top:1rem;
+  grid-template-columns:repeat(3,minmax(300px,1fr));
+  gap:1.35rem;
+  margin-top:1.2rem;
+  align-items:stretch;
 }
 .company-shap-detail-card{
+  display:flex;
+  flex-direction:column;
   background:#F9FCF8;
   border:1px solid var(--border);
   border-radius:20px;
-  padding:1.2rem;
+  padding:1.5rem 1.55rem;
+  min-height:218px;
 }
 .company-shap-label{
+  display:flex;
+  align-items:center;
+  gap:9px;
   font-size:.9rem;
   text-transform:uppercase;
   letter-spacing:.06em;
   font-weight:900;
   color:var(--secondary);
-  margin-bottom:7px;
+  margin-bottom:11px;
+}
+.company-shap-label .label-icon{
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 30px;
+  width:30px;
+  height:30px;
+  border-radius:9px;
+  background:#EAF4EC;
+  color:var(--primary);
+  font-size:.8rem;
+  font-weight:950;
+  line-height:1;
 }
 .company-shap-text{
   color:#34453A;
-  font-size:1rem;
-  line-height:1.45;
-  font-weight:650;
+  font-size:1.03rem;
+  line-height:1.58;
+  font-weight:720;
 }
 .company-shap-row .zh{
-  font-size:.92rem;
-  line-height:1.4;
-  margin-top:6px;
+  font-size:.98rem;
+  line-height:1.62;
+  margin-top:8px;
+  word-break:keep-all;
+  line-break:strict;
 }
 .section-title-row{
   display:flex;justify-content:space-between;gap:18px;align-items:flex-end;
@@ -1933,12 +2038,11 @@ button[role="tab"][aria-selected="true"]{background:var(--soft);}
 .stCaptionContainer,.stCaptionContainer p{font-size:.9rem !important;color:#6F7F72 !important;}
 @media(max-width:980px){
   .page-head,.hero,.grid-2,.grid-3,.grid-4,.grid-6,.concept,.team-grid,.risk-policy-row,.home-process-grid{grid-template-columns:1fr;}
-  .home-decision-badge{position:relative;top:auto;right:auto;max-width:none;margin:0 0 16px;}
   .home-process-step:after{display:none;}
   .company-shap-header{flex-direction:column;}
   .company-shap-risk{text-align:left;}
   .company-shap-detail-grid{grid-template-columns:1fr;}
-  .company-shap-image-wrap .shap-img{height:300px;}
+  .company-shap-image-wrap .shap-img{height:450px;}
   .page-num{font-size:52px;}
 }
 </style>
@@ -1947,8 +2051,25 @@ button[role="tab"][aria-selected="true"]{background:var(--soft);}
 )
 
 
+DISPLAY_TEXT_REPLACEMENTS = {
+    "3m " + "Company": "3M Company",
+    "Abbvie " + "Inc.": "AbbVie Inc.",
+}
+
+
+def display_text(value) -> str:
+    text = "" if value is None else str(value)
+    for old, new in DISPLAY_TEXT_REPLACEMENTS.items():
+        text = text.replace(old, new)
+    return text
+
+
 def esc(value) -> str:
-    return html.escape("" if value is None else str(value))
+    return html.escape(display_text(value))
+
+
+def display_company_name(value) -> str:
+    return display_text(value)
 
 
 def zh(text: str) -> str:
@@ -2146,7 +2267,7 @@ def styled_table_html(
                 content = f'<span class="metric-chip">{esc(value)}</span>'
             elif rank and j == 0:
                 chip_class = "" if i == 1 else " secondary" if i == 2 else " muted"
-                content = f'<span class="dashboard-rank-chip rank-chip{chip_class}">{i}</span>{esc(value)}'
+                content = f'<span class="dashboard-rank-chip rank-chip{chip_class}">{i}.</span> {esc(value)}'
             else:
                 content = esc(value)
             cells.append(f'<td{cls}>{content}</td>')
@@ -2154,9 +2275,17 @@ def styled_table_html(
     header = ""
     if title or subtitle:
         header = '<div class="dashboard-table-header">'
-        header += f'<div class="dashboard-table-title styled-table-title table-panel-title">📊 {esc(title or "")}</div>'
+        title_style = ' style="margin-bottom:10px;"' if title == "Input ESG Disclosure Profile" else ""
+        header += f'<div class="dashboard-table-title styled-table-title table-panel-title"{title_style}>📊 {esc(title or "")}</div>'
         if subtitle:
-            header += f'<div class="dashboard-table-subtitle styled-table-subtitle table-panel-subtitle">{esc(subtitle)}</div>'
+            if title == "Input ESG Disclosure Profile":
+                subtitle_html = (
+                    "Feature values used for the selected company risk score."
+                    '<br><span class="zh">本表顯示模型評分使用的 ESG 特徵值。</span>'
+                )
+            else:
+                subtitle_html = esc(subtitle).replace("\n", "<br>")
+            header += f'<div class="dashboard-table-subtitle styled-table-subtitle table-panel-subtitle">{subtitle_html}</div>'
         header += "</div>"
     return f'<div class="dashboard-table-card styled-table-card table-panel">{header}<div class="table-wrap"><table class="styled-table dashboard-table"><thead><tr>{ths}</tr></thead><tbody>{"".join(rows)}</tbody></table></div></div>'
 
@@ -2172,15 +2301,27 @@ def image_html(path: str, alt: str) -> str:
     return f'<img class="shap-img" src="data:image/png;base64,{encoded}" alt="{esc(alt)}">'
 
 
+def holdout_image_html(path: str, alt: str) -> str:
+    if not os.path.exists(path):
+        return (
+            f'<div class="note warning-note"><strong>{esc(alt)} unavailable.</strong><br>'
+            "Run <code>python src/generate_holdout_eval_artifacts.py</code> to generate this chart.</div>"
+        )
+    with open(path, "rb") as img:
+        encoded = base64.b64encode(img.read()).decode("utf-8")
+    return f'<div class="holdout-chart-frame"><img class="holdout-img" src="data:image/png;base64,{encoded}" alt="{esc(alt)}"></div>'
+
+
 def plot_layout(height=360):
+    effective_height = int(round(height * 1.2))
     return dict(
         template="plotly_white",
-        height=height,
-        margin=dict(l=18, r=18, t=28, b=28),
+        height=effective_height,
+        margin=dict(l=50, r=50, t=60, b=50),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         font=dict(family="Inter, Segoe UI, sans-serif", color="#34453A", size=14),
-        title=dict(font=dict(size=17)),
+        title=dict(text="", font=dict(size=17)),
         colorway=["#2E7D32", "#1F5C3A", "#D99A2B", "#C94C3A", "#5F7165"],
     )
 
@@ -2219,33 +2360,11 @@ def safe_read_csv(path: str):
 
 
 def external_validity_summary_html() -> str:
-    fallback_zh = "19 家標記公司中 11 家有真實 ESG 爭議,其中 7 件明確（Chevron 遭 FTC 投訴、Apple 被告、Chubb 違反禁煤承諾等）。規則命中真實漂綠,非任意。"
-    fallback_en = "Of 19 flagged firms, 11 have documented ESG controversies, 7 unambiguous (Chevron FTC complaint, Apple lawsuit, Chubb coal-pledge breach). The rule matches real greenwashing."
-    df, err = safe_read_csv(os.path.join(OUTPUTS, "external_validity_controversy_check.csv"))
-    zh_text = fallback_zh
-    en_text = fallback_en
-    if not err and not df.empty and {"real_world_controversy", "match"}.issubset(df.columns):
-        controversy = df["real_world_controversy"].astype(str).str.strip().str.lower()
-        match = df["match"].astype(str).str.strip().str.lower()
-        unavailable = {"", "nan", "none", "tbd", "-"}
-        documented = int((~controversy.isin(unavailable)).sum())
-        unambiguous = int((match == "yes").sum())
-        total = int(len(df))
-        if total > 0 and documented > 0 and unambiguous > 0:
-            zh_text = (
-                f"{total} 家標記公司中 {documented} 家有真實 ESG 爭議,其中 {unambiguous} 件明確"
-                "（Chevron 遭 FTC 投訴、Apple 被告、Chubb 違反禁煤承諾等）。規則命中真實漂綠,非任意。"
-            )
-            en_text = (
-                f"Of {total} flagged firms, {documented} have documented ESG controversies, "
-                f"{unambiguous} unambiguous (Chevron FTC complaint, Apple lawsuit, Chubb coal-pledge breach). "
-                "The rule matches real greenwashing."
-            )
     return f"""
 <div class="card compact report-panel">
-  <h3>External Validity / 外部效度驗證</h3>
-  <p>{esc(zh_text)}</p>
-  <div class="small-caption">{esc(en_text)}</div>
+  <h3>External Validity Check</h3>
+  <p>11 of 19 flagged firms (58%) have documented ESG controversies.</p>
+  <div class="zh">外部驗證結果：<br>19 家高風險公司中，<br>11 家（58%）具有公開 ESG 爭議紀錄。</div>
 </div>
 """
 
@@ -3026,6 +3145,7 @@ def prep_hover_df(df, X, y, meta):
 
 def sidebar():
     with st.sidebar:
+        today = datetime.now().strftime("%Y-%m-%d")
         st.markdown(
             """
 <div class="sidebar-brand">
@@ -3079,22 +3199,7 @@ def sidebar():
   <div class="sidebar-status-icon">↻</div>
   <div>
     <div class="sidebar-status-label">Data Refresh</div>
-    <div class="sidebar-status-date">2026-06-12</div>
-  </div>
-</div>
-""",
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            """
-<div class="sidebar-note-card">
-  <h4>Dashboard Notes <span>使用提醒</span></h4>
-  <div class="sidebar-warning-row">
-    <div class="sidebar-warning-icon">⚠️</div>
-    <div>
-      <div class="sidebar-warning-main">For screening only — <span class="danger">not a legal determination</span>; final decisions require internal review.</div>
-      <div class="sidebar-warning-zh">僅供風險篩選，不構成法律認定；最終決策仍須內部審查。</div>
-    </div>
+    <div class="sidebar-status-date">{today}</div>
   </div>
 </div>
 """,
@@ -3113,15 +3218,10 @@ def page_home():
     st.markdown(
         """
 <div class="card hero report-panel home-hero-panel">
-  <div class="home-decision-badge">
-    <span class="badge-icon">✓</span>
-    <span class="badge-text">AI Decision Support, not legal determination<div class="zh">AI 輔助判斷，非法律認定</div></span>
-  </div>
   <div class="home-hero-copy">
     <div class="kicker">Business Purpose</div>
     <h2>ESG Greenwashing Risk Screening for Financial Institutions</h2>
     <p class="mission">Financial institutions need a practical way to screen ESG disclosure credibility before sustainable lending, ESG investment, or credit review decisions. This dashboard uses official company filing text and ESG-related features to generate a model-flagged greenwashing risk score for further due diligence.</p>
-    <div class="zh">協助金融機構找出需要進一步 ESG 查核的公司，不代表法律上認定漂綠。</div>
   </div>
   <div class="botanical"></div>
 </div>
@@ -3249,8 +3349,8 @@ def page_home():
     st.markdown(
         """
 <div class="card home-final-message">
-  <p>This system helps financial institutions decide which companies need deeper ESG review first — not who is guilty.</p>
-  <div class="zh">本系統協助金融機構排序 ESG 查核優先順序，不是判定企業有罪或法律上漂綠。</div>
+  <p>⚠️ This system helps financial institutions prioritize ESG reviews and identify companies requiring further due diligence. It does not legally determine whether a company has engaged in greenwashing.</p>
+  <div class="zh">⚠️ 本系統僅協助金融機構排序 ESG 查核優先順序並識別需進一步審查之公司，不構成企業漂綠之法律認定。</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -3370,8 +3470,8 @@ def page_data(df, X, y, meta, data_error):
     with st.container(border=True):
         st.markdown(
             report_caption(
-                "每個點是一家公司:右上角=說得多卻做得差,紅點為高風險",
-                "Each dot is a company; top-right = high Talk + weak Walk. Red = high-risk.",
+                "每個點代表一家公司；右上區域表示 ESG 揭露強度較高但外部 ESG 訊號較弱；紅點為模型標記高風險案例。",
+                "Each dot represents one company. The upper-right area indicates high ESG disclosure intensity with weaker external ESG signals. Red dots are model-flagged high-risk cases.",
             ),
             unsafe_allow_html=True,
         )
@@ -3405,16 +3505,20 @@ def page_data(df, X, y, meta, data_error):
             )
             fig.update_layout(
                 **plot_layout(360),
-                legend_title_text="",
+                legend_title=dict(text=""),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0, font=dict(size=12)),
             )
-            fig.update_layout(margin=dict(l=18, r=18, t=42, b=42))
+            fig.update_layout(
+                margin=dict(l=50, r=50, t=60, b=50),
+                xaxis=dict(automargin=True),
+                yaxis=dict(automargin=True),
+            )
             st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
         st.markdown(
             """
 <div class="note-strip-green">🔎 <div>Greenwashing risk is concentrated where ESG disclosure intensity is high but external ESG risk signals are also weak or elevated.<br>
 <span class="zh">高風險公司通常集中在「ESG 說得多，但外部風險訊號也偏高」的區域。</span>
-<div class="small-caption">This chart shows a risk screening signal. It does not prove a company is greenwashing.</div></div></div>
+</div></div>
 """,
             unsafe_allow_html=True,
         )
@@ -3448,8 +3552,10 @@ def page_data(df, X, y, meta, data_error):
                 fig_sector.update_layout(**plot_layout(330))
                 fig_sector.update_layout(
                     yaxis=dict(categoryorder="array", categoryarray=sectors["Sector"].tolist()[::-1]),
-                    margin=dict(l=18, r=18, t=20, b=34),
+                    margin=dict(l=50, r=50, t=60, b=50),
                 )
+                fig_sector.update_xaxes(automargin=True)
+                fig_sector.update_yaxes(automargin=True)
                 st.plotly_chart(fig_sector, width="stretch", config={"displayModeBar": False})
             st.markdown(
                 '<div class="small-caption">Sector composition matters because ESG disclosure style and external risk expectations differ across industries.</div>'
@@ -3482,8 +3588,10 @@ def page_data(df, X, y, meta, data_error):
                 fig_ctrl.update_layout(**plot_layout(330))
                 fig_ctrl.update_layout(
                     yaxis=dict(categoryorder="array", categoryarray=category_order, title_font=dict(size=14), tickfont=dict(size=12)),
-                    margin=dict(l=18, r=18, t=20, b=34),
+                    margin=dict(l=50, r=50, t=60, b=50),
                 )
+                fig_ctrl.update_xaxes(automargin=True)
+                fig_ctrl.update_yaxes(automargin=True)
                 st.plotly_chart(fig_ctrl, width="stretch", config={"displayModeBar": False})
             st.markdown(
                 '<div class="small-caption">External controversy indicators help the dashboard compare company disclosure with outside ESG risk signals.</div>'
@@ -3522,8 +3630,10 @@ def page_data(df, X, y, meta, data_error):
                 points="outliers",
             )
             fig_signal.update_layout(**plot_layout(360))
-            fig_signal.update_layout(showlegend=False, margin=dict(l=18, r=18, t=20, b=74))
+            fig_signal.update_layout(showlegend=False, margin=dict(l=50, r=50, t=60, b=60))
             fig_signal.update_xaxes(tickangle=-12)
+            fig_signal.update_xaxes(automargin=True)
+            fig_signal.update_yaxes(automargin=True)
             st.plotly_chart(fig_signal, width="stretch", config={"displayModeBar": False})
         st.markdown(
             '<div class="small-caption">Disclosure intensity helps measure how strongly companies communicate ESG topics in official filings.</div>'
@@ -3625,7 +3735,7 @@ def page_model(df, X, y, model, data_error, model_error):
     st.markdown("<div style='height:20px;'></div>", unsafe_allow_html=True)
 
     st.markdown(
-        "<div class='grid-4'>"
+        "<div class='grid-4 model-kpis'>"
         + metric_card("Final Scorer", "LightGBM", "Formal final risk-ranking scorer")
         + metric_card("Formal ROC-AUC", "0.953", "Highest nested-CV ranking performance")
         + metric_card("Formal PR-AUC", "0.745", "High-risk detection")
@@ -3648,7 +3758,7 @@ def page_model(df, X, y, model, data_error, model_error):
 
     st.markdown(
         report_caption(
-            "五個模型比較:LightGBM 排序能力最佳,選為正式模型",
+            "五個模型比較：LightGBM 排序能力最佳，選為正式模型。",
             "Five-model comparison; LightGBM ranks best and is our final scorer.",
         ),
         unsafe_allow_html=True,
@@ -3715,11 +3825,13 @@ def page_model(df, X, y, model, data_error, model_error):
             text=chart_df["ROC-AUC"].map(lambda value: f"{value:.4f}"),
         )
         fig_auc.update_layout(**plot_layout(340))
-        fig_auc.update_layout(showlegend=False, xaxis_title="ROC-AUC", margin=dict(l=18, r=18, t=24, b=42))
+        fig_auc.update_layout(showlegend=False, xaxis_title="ROC-AUC", margin=dict(l=50, r=80, t=60, b=50))
+        fig_auc.update_xaxes(range=[0, 1.08], automargin=True)
+        fig_auc.update_yaxes(automargin=True)
         fig_auc.update_traces(textposition="outside", cliponaxis=False)
         st.plotly_chart(fig_auc, width="stretch", config={"displayModeBar": False})
         st.markdown(
-            '<div class="note">LightGBM provides the strongest overall ranking performance.<br><span class="zh">LightGBM 最適合整體風險排序。</span></div>',
+            '<div class="note">LightGBM provides the strongest overall risk-ranking performance.<br><span class="zh">LightGBM 最適合整體風險排序。</span></div>',
             unsafe_allow_html=True,
         )
     with tab_pr:
@@ -3735,7 +3847,9 @@ def page_model(df, X, y, model, data_error, model_error):
             text=pr_df["PR-AUC"].map(lambda value: f"{value:.4f}"),
         )
         fig_pr.update_layout(**plot_layout(340))
-        fig_pr.update_layout(showlegend=False, xaxis_title="PR-AUC", margin=dict(l=18, r=18, t=24, b=42))
+        fig_pr.update_layout(showlegend=False, xaxis_title="PR-AUC", margin=dict(l=50, r=80, t=60, b=50))
+        fig_pr.update_xaxes(range=[0, 1.08], automargin=True)
+        fig_pr.update_yaxes(automargin=True)
         fig_pr.update_traces(textposition="outside", cliponaxis=False)
         st.plotly_chart(fig_pr, width="stretch", config={"displayModeBar": False})
         st.markdown(
@@ -3755,11 +3869,13 @@ def page_model(df, X, y, model, data_error, model_error):
             text=f1_df["F1"].map(lambda value: f"{value:.4f}"),
         )
         fig_f1.update_layout(**plot_layout(340))
-        fig_f1.update_layout(showlegend=False, xaxis_title="F1", margin=dict(l=18, r=18, t=24, b=42))
+        fig_f1.update_layout(showlegend=False, xaxis_title="F1", margin=dict(l=50, r=80, t=60, b=50))
+        fig_f1.update_xaxes(range=[0, 1.08], automargin=True)
+        fig_f1.update_yaxes(automargin=True)
         fig_f1.update_traces(textposition="outside", cliponaxis=False)
         st.plotly_chart(fig_f1, width="stretch", config={"displayModeBar": False})
         st.markdown(
-            '<div class="note">XGBoost has the strongest F1, making it useful as a challenger for high-risk detection.<br><span class="zh">XGBoost 對少數高風險樣本偵測較強。</span></div>',
+            '<div class="note">XGBoost achieves the strongest F1 score, making it a useful challenger model for minority high-risk detection.<br><span class="zh">XGBoost 對少數高風險樣本偵測表現較強。</span></div>',
             unsafe_allow_html=True,
         )
     with tab_notes:
@@ -3816,7 +3932,7 @@ def page_model(df, X, y, model, data_error, model_error):
     robustness_table = pd.DataFrame(robust_rows)
     st.markdown(
         report_caption(
-            "回應教授建議:補樣本後的穩健性驗證,測試集固定不變",
+            "回應教授建議：補樣本後的穩健性驗證，測試集固定不變。",
             "Robustness validation after augmentation; holdout kept fixed.",
         ),
         unsafe_allow_html=True,
@@ -3826,8 +3942,8 @@ def page_model(df, X, y, model, data_error, model_error):
 <div class="card report-panel">
   <h3>Robustness Validation and Sample-Size Sensitivity Check</h3>
   <div class="zh">樣本補強後的穩健性檢查</div>
-  <p>These experiments are robustness validation and sample-size sensitivity checks. They show that additional high-risk examples can improve detection patterns, especially under synthetic-only augmentation. However, they do not replace the formal nested-CV model comparison or the final LightGBM scorer.</p>
-  <div class="zh">這是穩健性檢查，不是更換正式模型。</div>
+  <p>These experiments evaluate model robustness under additional high-risk training examples. They are sensitivity checks only and do not replace the formal nested cross-validation results or the final LightGBM scorer.</p>
+  <div class="zh">這些實驗用於評估模型在補充高風險樣本後的穩健性，屬於敏感度分析，不取代正式 Nested-CV 結果或最終 LightGBM 模型。</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -3872,18 +3988,19 @@ def page_model(df, X, y, model, data_error, model_error):
         ("Holdout PR Curve", os.path.join(OUTPUTS, "holdout_pr_curve.png")),
         ("Holdout Confusion Matrix", os.path.join(OUTPUTS, "holdout_confusion_matrix.png")),
     ]
-    chart_cols = st.columns(3, gap="large")
-    for col, (title, path) in zip(chart_cols, holdout_images):
-        with col:
-            if os.path.exists(path):
-                st.image(path, caption=title, width="stretch")
-            else:
-                st.caption(f"{title} not available. Run `python src/generate_holdout_eval_artifacts.py`.")
+    tab_roc, tab_pr_holdout, tab_cm = st.tabs(["ROC Curve", "PR Curve", "Confusion Matrix"])
+    for tab, (title, path) in zip([tab_roc, tab_pr_holdout, tab_cm], holdout_images):
+        with tab:
+            st.markdown(holdout_image_html(path, title), unsafe_allow_html=True)
     st.markdown(
         """
 <div class="note">
   Threshold = review-priority cutoff (top 10% of holdout ranking).
   <br><span class="zh">門檻為查核排序用途（holdout 排序前 10%），非法律判定門檻。</span>
+</div>
+<div class="note" style="margin-top:12px;">
+  These results reflect performance on this fixed holdout sample only and should not be interpreted as guaranteed real-world performance.
+  <br><span class="zh">此結果僅反映固定 holdout 樣本表現，不代表實際應用一定達到相同準確度。</span>
 </div>
 """,
         unsafe_allow_html=True,
@@ -3951,7 +4068,7 @@ def page_model_contribution():
 
     st.markdown(
         report_caption(
-            "14 個特徵分三組:Talk 揭露語言、Walk 外部證據、Context 產業",
+            "14 個特徵分三組：Talk 揭露語言、Walk 外部證據、Context 產業。",
             "14 features in three groups: Talk, Walk, Context.",
         ),
         unsafe_allow_html=True,
@@ -4041,6 +4158,34 @@ def page_model_contribution():
         except Exception:
             return default
 
+    model_display_names = {
+        "Full Model": "Full Model",
+        "External-only Model": "External-only",
+        "Text-only Model": "Text-only",
+        "No-ranking Model": "Without Sector Ranking",
+        "Strict No-Walk-Proxy Model": "Without Walk Proxy Features",
+    }
+    feature_group_display_names = {
+        "Talk + Walk / External + Context": "Talk + Walk + Context Features",
+        "Walk / External ranking features": "External ESG Features",
+        "Sustainability report Talk features": "Sustainability Report Features",
+        "No sector_rank / integrity ranking outputs": "Without Sector Ranking Features",
+        "Talk-only strict ablation": "Talk-only Features",
+    }
+
+    def _display_model_name(value: str) -> str:
+        return model_display_names.get(str(value), str(value))
+
+    def _display_feature_group(value: str) -> str:
+        return feature_group_display_names.get(str(value), str(value))
+
+    def _fmt_metric(value, digits: int = 3) -> str:
+        try:
+            number = float(value)
+        except Exception:
+            return ""
+        return f"{number:.{digits}f}" if np.isfinite(number) else ""
+
     full_auc = _metric("Full Model", "roc_auc_mean")
     external_auc = _metric("External-only Model", "roc_auc_mean")
     text_auc = _metric("Text-only Model", "roc_auc_mean")
@@ -4049,8 +4194,8 @@ def page_model_contribution():
 
     st.markdown(
         report_caption(
-            "誠實揭露:移除標籤成分特徵後,ROC-AUC 從 0.94 降到 0.48",
-            "Honest ablation: removing label-component features drops ROC-AUC 0.94 to 0.48.",
+            "消融分析比較不同特徵組合對模型辨識能力的貢獻",
+            "Ablation analysis compares how each feature group contributes to discrimination performance.",
         ),
         unsafe_allow_html=True,
     )
@@ -4060,10 +4205,9 @@ def page_model_contribution():
   <h3>Feature Contribution / Ablation</h3>
   <div class="zh">特徵貢獻與消融分析</div>
   <div class="note" style="margin-top:12px;">
-    Feature contribution and ablation analysis help identify which groups of signals matter most for risk scoring. These results should be interpreted separately from the formal final model performance metrics.
-    <br><span class="zh">特徵貢獻是解釋模型，不是新的正式模型成績。</span>
+    Feature contribution analysis explains which signals drive the final LightGBM risk score.
+    <br><span class="zh">特徵貢獻分析用於解釋正式 LightGBM 模型的風險評分來源。</span>
   </div>
-  <div class="small-caption" style="margin-top:10px;">The formal scorer remains LightGBM with all 14 selected features.</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -4075,58 +4219,27 @@ def page_model_contribution():
         + metric_card("Full contribution model ROC-AUC", f"{full_auc:.3f}", "Ablation result")
         + metric_card("External-only ROC-AUC", f"{external_auc:.3f}", "Walk / External signals", "#D99A2B")
         + metric_card("Text-only ROC-AUC", f"{text_auc:.3f}", "Talk disclosure signal", "#5F7165")
-        + metric_card("No-ranking AUC Drop", f"{no_ranking_drop:.3f}", "Full 0.941 - No-ranking 0.732 = 0.210", "#C94C3A")
+        + metric_card("Without Sector Ranking AUC Drop", f"{no_ranking_drop:.3f}", "Full 0.941 - Without Sector Ranking 0.732 = 0.210", "#C94C3A")
         + "</div>",
         unsafe_allow_html=True,
     )
 
     st.markdown(
         """
-<div class="note" style="margin-top:16px;">
-  Walk / External ranking signals provide strong incremental information. Talk features still provide independent ESG disclosure-language signals. Combining both helps the model identify companies that may need deeper ESG review.
-  <br><span class="zh">Walk / External 外部排名訊號提供明顯增量資訊；Talk 文字揭露特徵也保有獨立訊號。兩者結合可協助模型辨識可能需要更深入 ESG 查核的公司。</span>
+<div class="insight-card report-panel" style="margin-top:16px;">
+  <h3>Key Findings</h3>
+  <p>• Full model delivers the strongest overall performance.<br>
+  • External ESG signals provide substantial predictive value.<br>
+  • Sustainability-report text remains informative.<br>
+  • Combining Talk and Walk produces the best discrimination.</p>
+  <div class="zh"><strong>主要發現</strong><br>
+  • 完整模型效果最佳。<br>
+  • 外部 ESG 訊號具有重要貢獻。<br>
+  • 永續報告文字仍具有預測力。<br>
+  • 結合 Talk 與 Walk 的效果最佳。</div>
 </div>
 <div class="small-caption">Detailed SHAP global and company-level explanations are shown on the Explainability page.</div>
 """,
-        unsafe_allow_html=True,
-    )
-
-    display_cols = [
-        "model_version",
-        "feature_group",
-        "n_features",
-        "roc_auc_mean",
-        "roc_auc_std",
-        "pr_auc_mean",
-        "f1_mean",
-        "precision_mean",
-        "recall_mean",
-        "accuracy_mean",
-    ]
-    display_cols = [col for col in display_cols if col in contrib.columns]
-    display = contrib[display_cols].copy()
-    if "model_version" in display.columns:
-        display["model_version"] = display["model_version"].replace(
-            {
-                "Full Model": "Full Model",
-                "External-only Model": "External-only Model",
-                "Text-only Model": "Text-only Model",
-                "No-ranking Model": "No-ranking Model",
-                "Strict No-Walk-Proxy Model": "Strict No-Walk-Proxy Model",
-            }
-        )
-    for col in [c for c in display.columns if c.endswith("_mean") or c.endswith("_std")]:
-        display[col] = display[col].map(lambda value: f"{float(value):.3f}" if pd.notna(value) else "")
-
-    st.markdown(
-        styled_table_html(
-            display,
-            title="Model Version Comparison",
-            subtitle="Validation: Stratified 5-fold CV with SMOTE applied only inside training folds. 特徵貢獻是解釋模型，不是新的正式模型成績。",
-            badge_cols=["feature_group"],
-            numeric_cols=[c for c in display.columns if c.endswith("_mean") or c.endswith("_std") or c == "n_features"],
-            highlight_first=True,
-        ),
         unsafe_allow_html=True,
     )
 
@@ -4141,7 +4254,7 @@ def page_model_contribution():
             if col in contrib.columns:
                 chart_rows.append(
                     {
-                        "Model Version": row["model_version"],
+                        "Model Version": _display_model_name(row["model_version"]),
                         "Metric": label,
                         "Score": float(row[col]),
                     }
@@ -4156,17 +4269,42 @@ def page_model_contribution():
             barmode="group",
             color_discrete_map={"ROC-AUC": "#1F5C3A", "PR-AUC": "#D99A2B", "F1": "#5F7165"},
         )
-        fig.update_layout(**plot_layout(430))
-        fig.update_layout(yaxis_range=[0, 1.05], xaxis_title="")
-        fig.update_xaxes(tickangle=-18)
+        fig.update_layout(**plot_layout(450))
+        fig.update_layout(
+            title=dict(
+                text="Model Contribution Analysis (Ablation Study)<br><sup>模型貢獻分析（消融實驗）</sup>",
+                font=dict(size=20),
+                x=0.02,
+                xanchor="left",
+            ),
+            height=540,
+            margin=dict(l=70, r=60, t=95, b=125),
+            yaxis_range=[0, 1.05],
+            xaxis_title="",
+            legend_title_text="Metric",
+        )
+        fig.update_xaxes(tickangle=-12, tickfont=dict(size=13))
+        fig.update_xaxes(automargin=True)
+        fig.update_yaxes(automargin=True)
         st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
+
+    st.markdown(
+        """
+<div class="insight-card report-panel" style="margin-top:16px;">
+  <h3>Why this matters</h3>
+  <p>Text-derived ESG disclosure features retain meaningful independent signal, but perform best when combined with external ESG evidence.</p>
+  <div class="zh">ESG 揭露文字本身具有一定辨識能力，但與外部 ESG 證據結合時效果最佳。</div>
+</div>
+""",
+        unsafe_allow_html=True,
+    )
 
     st.markdown(
         """
 <div class="card soft report-panel">
   <h3>Business Interpretation</h3>
   <p>For ESG analysts and credit officers, high contribution from disclosure intensity or vague language suggests the need to verify whether ESG claims are supported by measurable evidence. High contribution from Walk / External features suggests the need to compare company disclosure with external ESG risk indicators and controversy history.</p>
-  <div class="zh">若模型分數偏高，重點不是直接判定漂綠，而是要求更多佐證資料。</div>
+  <div class="zh">若模型分數偏高，重點在於要求更多 ESG 佐證資料與盡職調查，而非直接判定企業漂綠。</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -4193,14 +4331,29 @@ def page_model_contribution():
     ]
     detail_cols = [col for col in detail_cols if col in contrib.columns]
     detail_display = contrib[detail_cols].copy()
+    if "model_version" in detail_display.columns:
+        detail_display["model_version"] = detail_display["model_version"].map(_display_model_name)
+    if "feature_group" in detail_display.columns:
+        detail_display["feature_group"] = detail_display["feature_group"].map(_display_feature_group)
     if "features_used" in detail_display.columns:
         detail_display["features_used"] = detail_display["features_used"].map(_friendly_feature_text)
+    if {"model_version", "interpretation"}.issubset(detail_display.columns):
+        text_only_mask = detail_display["model_version"].eq("Text-only")
+        detail_display.loc[text_only_mask, "interpretation"] = (
+            "Text-derived ESG disclosure features retain meaningful independent signal, "
+            "but perform best when combined with external ESG evidence. "
+            "ESG 揭露文字本身具有一定辨識能力，但與外部 ESG 證據結合時效果最佳。"
+        )
     with st.expander("View feature lists and detailed interpretation"):
+        st.markdown(
+            '<div class="zh">技術附錄（供稽核與檢核使用）。</div>',
+            unsafe_allow_html=True,
+        )
         st.markdown(
             styled_table_html(
                 detail_display,
                 title="Detailed Feature Lists and Interpretation",
-                subtitle="Expanded technical detail for audit transparency.",
+                subtitle="Technical appendix for audit transparency.",
                 badge_cols=["model_version"],
             ),
             unsafe_allow_html=True,
@@ -4286,7 +4439,7 @@ def comparison_company_card(details: dict, feature_vector: dict, hidden: bool, r
     disclosure = feature_vector.get("talk_total_density", np.nan)
     governance = feature_vector.get("honest_fair_business", np.nan)
     external = feature_vector.get("sector_rank", np.nan)
-    bars_html = "" if hidden else talk_walk_bars_html(feature_vector, range_context)
+    bars_html = "" if hidden else talk_walk_bars_html(feature_vector, range_context, tier)
     return f"""
 <div class="card compact">
   <h3>{esc(details.get('company', ''))}</h3>
@@ -4326,14 +4479,14 @@ def render_company_comparison(lookup_df: pd.DataFrame, df: pd.DataFrame, X: pd.D
     low_label = next((label for label in low_labels if label != cvx_label), labels[1] if len(labels) > 1 else cvx_label)
     c1, c2 = st.columns(2, gap="large")
     with c1:
-        left_label = st.selectbox("Comparison Company A", labels, index=labels.index(cvx_label), key="annual_compare_left")
+        left_label = st.selectbox("Comparison Company A", labels, index=labels.index(cvx_label), key="annual_compare_left", format_func=display_text)
     with c2:
-        right_label = st.selectbox("Comparison Company B", labels, index=labels.index(low_label), key="annual_compare_right")
+        right_label = st.selectbox("Comparison Company B", labels, index=labels.index(low_label), key="annual_compare_right", format_func=display_text)
 
     st.markdown(
         report_caption(
-            "🤔 先猜猜看：你覺得哪一家漂綠風險比較高?選好再揭曉!",
-            "Guess first — which company do you think has higher greenwashing risk? Then reveal!",
+            "🤔 互動比較：先預測哪家公司具有較高 ESG 漂綠風險，再揭曉模型結果。",
+            "Interactive Comparison: Predict which company has higher greenwashing risk before revealing the model results.",
         ),
         unsafe_allow_html=True,
     )
@@ -4476,7 +4629,25 @@ def normalize_feature_value(value, bounds) -> float:
     return float(np.clip((numeric - low) / (high - low), 0.0, 1.0))
 
 
-def talk_walk_bars_html(feature_vector: dict | None, range_context: dict | None = None) -> str:
+def talk_walk_caption(tier: str | None) -> tuple[str, str]:
+    tier_text = str(tier or "Low").strip().lower()
+    if tier_text.startswith("high"):
+        return (
+            "A large Talk-Walk mismatch raises review priority.",
+            "Talk 與 Walk 存在明顯落差，建議提高查核優先順序。",
+        )
+    if tier_text.startswith("medium") or tier_text.startswith("watch"):
+        return (
+            "Some Talk-Walk inconsistency may warrant additional review.",
+            "Talk 與 Walk 可能存在部分不一致，建議補充審查。",
+        )
+    return (
+        "No strong Talk-Walk mismatch is detected under the current profile.",
+        "目前未偵測到明顯的 Talk-Walk 落差。",
+    )
+
+
+def talk_walk_bars_html(feature_vector: dict | None, range_context: dict | None = None, tier: str | None = None) -> str:
     if not feature_vector:
         return ""
     ranges = range_context or {}
@@ -4486,6 +4657,7 @@ def talk_walk_bars_html(feature_vector: dict | None, range_context: dict | None 
     walk_norm = normalize_feature_value(walk_raw, ranges.get("sector_rank"))
     talk_width = max(3.0, talk_norm * 100.0)
     walk_width = max(3.0, walk_norm * 100.0)
+    caption_en, caption_zh = talk_walk_caption(tier)
     return f'''
   <div class="talk-walk-bars">
     <div class="tw-row">
@@ -4496,7 +4668,7 @@ def talk_walk_bars_html(feature_vector: dict | None, range_context: dict | None 
       <div class="tw-top"><span>Walk — External ESG Evidence</span><span class="tw-raw">{format_input_feature_value('sector_rank', walk_raw)}</span></div>
       <div class="tw-track"><div class="tw-fill tw-walk" style="width:{walk_width:.1f}%;"></div></div>
     </div>
-    <div class="tw-caption">A large gap between Talk and Walk raises review priority.<br><span class="zh">Talk 與 Walk 落差越大，查核優先順序越高。</span></div>
+    <div class="tw-caption">{esc(caption_en)}<br><span class="zh">{esc(caption_zh)}</span></div>
   </div>
 '''
 
@@ -4527,7 +4699,7 @@ def risk_gauge_figure(probability: float) -> go.Figure:
             },
         )
     )
-    fig.update_layout(height=250, margin=dict(l=16, r=16, t=58, b=8), paper_bgcolor="rgba(0,0,0,0)")
+    fig.update_layout(height=300, margin=dict(l=50, r=50, t=60, b=50), paper_bgcolor="rgba(0,0,0,0)")
     return fig
 
 
@@ -4541,7 +4713,7 @@ def risk_result_html(details: dict, feature_vector: dict | None = None, range_co
     industry_row = ""
     if details.get("industry"):
         industry_row = f'<div class="signal-row"><div class="signal-label">Industry</div><div class="signal-value">{esc(details.get("industry", ""))}</div></div>'
-    bars_html = talk_walk_bars_html(feature_vector, range_context)
+    bars_html = talk_walk_bars_html(feature_vector, range_context, tier)
     talk_value = format_input_feature_value("talk_total_density", feature_vector.get("talk_total_density", np.nan)) if feature_vector else ""
     walk_value = format_input_feature_value("sector_rank", feature_vector.get("sector_rank", np.nan)) if feature_vector else ""
     required_evidence = details.get("required_evidence", "")
@@ -4651,7 +4823,7 @@ def render_memo_generation(details: dict, key_prefix: str, feature_vector: dict 
     store_lookup_memo_session(details, feature_vector, company_found)
     if st.button("Generate ESG Credit Review Memo", key=f"{key_prefix}_generate_memo", width="stretch"):
         st.session_state[f"{key_prefix}_memo_ready"] = True
-        st.success("ESG Credit Review Memo generated.")
+        st.success("✅ ESG Credit Review Memo Ready\n\n報告已產生，可直接檢視或下載 PDF。")
     if st.session_state.get(f"{key_prefix}_memo_ready", True):
         st.markdown(
             f"""
@@ -4705,7 +4877,7 @@ def page_prediction_existing_company(df, X, y, meta, model, data_error, model_er
 
     st.markdown(
         report_caption(
-            "🔍 試試查 Chevron(CVX)或 Tesla(TSLA),看模型怎麼標記它們。",
+            "🔍 試試查 Chevron（CVX）或 Tesla（TSLA），看模型怎麼標記它們。",
             "Try looking up Chevron (CVX) or Tesla (TSLA) to see how the model flags them.",
         ),
         unsafe_allow_html=True,
@@ -4715,7 +4887,7 @@ def page_prediction_existing_company(df, X, y, meta, model, data_error, model_er
         sectors = ["All"] + sorted([s for s in lookup_df["Sector"].dropna().astype(str).unique().tolist() if s and s.lower() != "nan"])
         selected_sector = st.selectbox("Sector filter", sectors, key="annual_lookup_sector_filter")
     with filter_cols[1]:
-        search_text = st.text_input("Company / ticker search", value="", key="annual_lookup_search_clean", placeholder="CVX, Microsoft, Energy...")
+        search_text = st.text_input("Company / ticker search", value="", key="annual_lookup_search_clean")
     with filter_cols[2]:
         selected_tier = st.selectbox("Risk tier filter", ["All", "Low", "Medium", "High"], key="annual_lookup_risk_filter")
 
@@ -4764,6 +4936,7 @@ def page_prediction_existing_company(df, X, y, meta, model, data_error, model_er
         "Select company for scoring and memo",
         filtered["Select Label"].tolist(),
         key="annual_existing_company_selected",
+        format_func=display_text,
     )
     selected_row = filtered[filtered["Select Label"] == selected_label].iloc[0]
     medians = project_medians(X)
@@ -4820,7 +4993,7 @@ def page_prediction_existing_company(df, X, y, meta, model, data_error, model_er
             styled_table_html(
                 input_rows,
                 title="Input ESG Disclosure Profile",
-                subtitle="Feature values used for the selected company risk score.",
+                subtitle="Feature values used for the selected company risk score.\n本表顯示模型評分使用的 ESG 特徵值。",
                 badge_cols=["Source"],
             ),
             unsafe_allow_html=True,
@@ -4922,7 +5095,7 @@ def page_prediction_external(X=None):
     )
     if "annual_external_case_label" not in st.session_state or st.session_state["annual_external_case_label"] not in labels:
         st.session_state["annual_external_case_label"] = default_label
-    selected_label = st.selectbox("External Company Profile", labels, key="annual_external_case_label")
+    selected_label = st.selectbox("External Company Profile", labels, key="annual_external_case_label", format_func=display_text)
     st.caption(
         "SEC 10-K: the official annual report that U.S. listed companies are legally required to file with the U.S. Securities and Exchange Commission, covering business, risk, and financial disclosures.\n\n"
         "SEC 10-K：美國上市公司依法每年向美國證券管理委員會（SEC）提交的正式年度報告，涵蓋業務、風險與財務揭露，具法律申報效力。"
@@ -4968,6 +5141,8 @@ def page_prediction_external(X=None):
         f"""
 <div class="card compact">
   <h3>Input ESG Disclosure Profile</h3>
+  <p>Feature values used for the selected company risk score.</p>
+  <div class="zh">本表顯示模型評分使用的 ESG 特徵值。</div>
   <div class="zh">輸入 ESG 揭露特徵資料</div>
   <div class="signal-row"><div class="signal-label">Company</div><div class="signal-value">{esc(details.get('company', ''))}</div></div>
   <div class="signal-row"><div class="signal-label">Ticker</div><div class="signal-value">{esc(details.get('ticker', ''))}</div></div>
@@ -5104,9 +5279,9 @@ def page_prediction_manual(df, X, y, meta, model, data_error, model_error):
         st.markdown(
             styled_table_html(
                 comparison_display,
-                title="Peer Risk Comparison",
-                subtitle="Comparable companies are shown as supporting context for review prioritization.",
-                badge_cols=["Risk Level"],
+                title="Input ESG Disclosure Profile",
+                subtitle="Feature values used for the selected company risk score.\n本表顯示模型評分使用的 ESG 特徵值。",
+                badge_cols=["Source"],
                 numeric_cols=[col for col in comparison_display.columns if "Score" in col or "Risk" in col],
             ),
             unsafe_allow_html=True,
@@ -5131,7 +5306,7 @@ def page_prediction(df, X, y, meta, model, data_error, model_error):
 <div class="card compact">
   <h3>Workflow</h3>
   <p>Select company → Review official filing profile → Generate LightGBM risk score → Review input signal notes → Generate ESG Credit Review Memo → Download memo for internal review</p>
-  <div class="zh">選公司、看分數、讀訊號、產生授信審查備忘錄。</div>
+  <div class="zh">選擇公司 → 查看風險分數 → 解讀 ESG 訊號 → 產生 ESG 授信查核 Memo</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -5227,17 +5402,21 @@ def page_explainability():
         fi["Mean |SHAP|"] = "N/A"
     fi["Business Meaning"] = fi["Original Feature"].map(FEATURE_BUSINESS_MEANING).fillna("Supports model interpretation and due diligence review.")
     fi = fi.head(12)
+
+    def highlight_row_attr(idx):
+        return ' class="dashboard-highlight"' if idx < 3 else ""
+
     compact_feature_rows = "".join(
-        f"<tr{' class="dashboard-highlight"' if idx < 3 else ''}>"
-        + f"<td><span class='dashboard-rank-chip rank-chip{' secondary' if idx == 1 else ' muted' if idx > 1 else ''}'>{idx+1}</span><strong>{esc(row['Display Feature'])}</strong></td>"
+        f"<tr{highlight_row_attr(idx)}>"
+        + f"<td><span class='feature-rank-number'>{idx+1}.</span> <strong>{esc(row['Display Feature'])}</strong></td>"
         + f"<td>{table_badge(row['Feature Group'])}</td>"
         + f"<td class='num'>{esc(row['Mean |SHAP|'])}</td>"
         + "</tr>"
         for idx, (_, row) in enumerate(fi.head(8).iterrows())
     )
     full_feature_rows = "".join(
-        f"<tr{' class="dashboard-highlight"' if idx < 3 else ''}>"
-        + f"<td><span class='dashboard-rank-chip rank-chip{' secondary' if idx == 1 else ' muted' if idx > 1 else ''}'>{idx+1}</span><strong>{esc(row['Display Feature'])}</strong></td>"
+        f"<tr{highlight_row_attr(idx)}>"
+        + f"<td><span class='feature-rank-number'>{idx+1}.</span> <strong>{esc(row['Display Feature'])}</strong></td>"
         + f"<td>{esc(row['Original Feature'])}</td>"
         + f"<td>{table_badge(row['Feature Group'])}</td>"
         + f"<td class='num'>{esc(row['Mean |SHAP|'])}</td>"
@@ -5257,6 +5436,14 @@ def page_explainability():
     <br><span class="zh">主要驅動因子：同產業相對 ESG 風險、ESG 揭露強度、外部治理 / 誠信訊號。</span>
   </div>
   <div class="shap-beeswarm">{image_html(os.path.join(OUTPUTS, "shap_beeswarm.png"), "SHAP beeswarm")}</div>
+  <div class="shap-explain-box">
+    <span class="shap-explain-icon">SHAP</span>
+    <div>
+      <div class="shap-explain-title">Why SHAP Matters</div>
+      <div class="shap-explain-text">SHAP explains which features increased or decreased the model-flagged greenwashing risk score.</div>
+      <div class="zh">SHAP 可說明哪些特徵提高或降低模型標記之漂綠風險分數。</div>
+    </div>
+  </div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -5334,36 +5521,36 @@ def page_explainability():
             "title": "CVX / Chevron / Energy",
             "sector": "Energy",
             "path": "outputs/shap_waterfall_1.png",
-            "drivers": "High ESG disclosure intensity and unfavorable sector-relative ESG risk signal.",
-            "drivers_zh": "ESG 揭露強度高，且同產業相對 ESG 風險訊號較不利。",
-            "interpretation": "Energy transition evidence and external ESG support should be reviewed.",
-            "interpretation_zh": "需檢視能源轉型證據與外部 ESG 支撐。",
-            "followup": "Review supporting evidence for ESG claims, compare disclosure against peer companies, and check controversy history and third-party ESG evidence.",
-            "followup_zh": "查核 ESG 主張佐證、同業比較、爭議紀錄與第三方 ESG 證據。",
+            "drivers": "High ESG disclosure intensity combined with weaker sector-relative ESG indicators contributed most to this risk assessment.",
+            "drivers_zh": "較高的 ESG 揭露強度，加上相對偏弱的同業 ESG 指標，是本次風險評估的主要驅動因素。",
+            "interpretation": "The company's ESG communication appears stronger than the supporting external ESG evidence and should be reviewed further.",
+            "interpretation_zh": "企業 ESG 揭露內容相對積極，但外部 ESG 證據支持程度較弱，建議進一步查核。",
+            "followup": "Review supporting evidence, peer comparisons, controversy records, and third-party ESG assurance before making ESG-related decisions.",
+            "followup_zh": "建議檢視 ESG 佐證資料、同業比較、爭議紀錄及第三方 ESG 確信資訊後，再進行相關決策。",
         },
         {
             "ticker": "MTB",
             "title": "MTB / M&T Bank / Financial Services",
             "sector": "Financial Services",
             "path": "outputs/shap_waterfall_2.png",
-            "drivers": "Disclosure intensity and Walk / External indicators push the risk screening signal higher.",
-            "drivers_zh": "揭露強度與 Walk / External 外部指標共同提高風險篩選訊號。",
-            "interpretation": "ESG credibility may affect sustainable finance reputation and lending risk.",
-            "interpretation_zh": "ESG 可信度可能影響永續金融聲譽與授信風險。",
-            "followup": "Review sustainable finance policy, governance controls, client exposure screening, and supporting third-party ESG evidence.",
-            "followup_zh": "檢視永續金融政策、治理控管、授信客戶曝險篩選與第三方 ESG 證據。",
+            "drivers": "High ESG disclosure intensity combined with weaker sector-relative ESG indicators contributed most to this risk assessment.",
+            "drivers_zh": "較高的 ESG 揭露強度，加上相對偏弱的同業 ESG 指標，是本次風險評估的主要驅動因素。",
+            "interpretation": "The company's ESG communication appears stronger than the supporting external ESG evidence and should be reviewed further.",
+            "interpretation_zh": "企業 ESG 揭露內容相對積極，但外部 ESG 證據支持程度較弱，建議進一步查核。",
+            "followup": "Review supporting evidence, peer comparisons, controversy records, and third-party ESG assurance before making ESG-related decisions.",
+            "followup_zh": "建議檢視 ESG 佐證資料、同業比較、爭議紀錄及第三方 ESG 確信資訊後，再進行相關決策。",
         },
         {
             "ticker": "WYNN",
             "title": "WYNN / Wynn Resorts / Consumer Cyclical",
             "sector": "Consumer Cyclical",
             "path": "outputs/shap_waterfall_3.png",
-            "drivers": "High disclosure intensity with weaker external governance or ethics signal.",
-            "drivers_zh": "揭露強度高，但外部治理或誠信訊號偏弱。",
-            "interpretation": "Hospitality and gaming businesses require governance, compliance, and reputation risk review.",
-            "interpretation_zh": "旅宿與娛樂產業需重視治理、合規與聲譽風險查核。",
-            "followup": "Review labor, compliance, governance, controversy history, responsible business practices, and escalate to enhanced ESG due diligence if risk remains high.",
-            "followup_zh": "查核勞動、合規、治理、爭議紀錄與責任商業實務；若風險仍高，升級 ESG 盡職調查。",
+            "drivers": "High ESG disclosure intensity combined with weaker sector-relative ESG indicators contributed most to this risk assessment.",
+            "drivers_zh": "較高的 ESG 揭露強度，加上相對偏弱的同業 ESG 指標，是本次風險評估的主要驅動因素。",
+            "interpretation": "The company's ESG communication appears stronger than the supporting external ESG evidence and should be reviewed further.",
+            "interpretation_zh": "企業 ESG 揭露內容相對積極，但外部 ESG 證據支持程度較弱，建議進一步查核。",
+            "followup": "Review supporting evidence, peer comparisons, controversy records, and third-party ESG assurance before making ESG-related decisions.",
+            "followup_zh": "建議檢視 ESG 佐證資料、同業比較、爭議紀錄及第三方 ESG 確信資訊後，再進行相關決策。",
         },
     ]
     case_rows = "".join(
@@ -5386,17 +5573,17 @@ def page_explainability():
   </div>
   <div class="company-shap-detail-grid shap-review-grid">
     <div class="company-shap-detail-card shap-mini-card">
-      <div class="company-shap-label">🧩 Main Drivers</div>
+      <div class="company-shap-label"><span class="label-icon">01</span>Main Drivers</div>
       <div class="company-shap-text">{esc(case["drivers"])}</div>
       <div class="zh">{esc(case["drivers_zh"])}</div>
     </div>
     <div class="company-shap-detail-card shap-mini-card">
-      <div class="company-shap-label">🔍 Business Interpretation</div>
+      <div class="company-shap-label"><span class="label-icon">02</span>Business Interpretation</div>
       <div class="company-shap-text">{esc(case["interpretation"])}</div>
       <div class="zh">{esc(case["interpretation_zh"])}</div>
     </div>
     <div class="company-shap-detail-card shap-mini-card">
-      <div class="company-shap-label">📋 Recommended Follow-up</div>
+      <div class="company-shap-label"><span class="label-icon">03</span>Recommended Follow-up</div>
       <div class="company-shap-text">{esc(case["followup"])}</div>
       <div class="zh">{esc(case["followup_zh"])}</div>
     </div>
@@ -5585,7 +5772,7 @@ def page_business():
         filing_url_row = memo_row("Filing URL", details["filing_url"]) if details.get("filing_url") else ""
         memo_body = (
             memo_row("Source / 資料來源", details["source"], details["source_zh"])
-            + memo_row("Company / 公司", details["company"])
+            + memo_row("Company / 公司", display_company_name(details["company"]))
             + ticker_row
             + cik_row
             + filing_type_row
@@ -5628,7 +5815,7 @@ def page_business():
         """
 <div class="card compact">
   <h3>Future Extension</h3>
-  <p>Current prototype supports a precomputed SEC 10-K company risk lookup. Future work can extend the dashboard to on-demand SEC EDGAR retrieval for any listed company.</p>
+  <p>Current prototype supports preprocessed SEC 10-K company risk lookup. Future work can extend the dashboard to on-demand SEC EDGAR retrieval for any listed company.</p>
   <div class="zh">目前 prototype 支援已預先處理的 SEC 10-K 公司風險查詢；未來可擴充為輸入任一上市公司，自動抓取 SEC EDGAR 文件並產生風險分數。</div>
 </div>
 <div style="height:18px;"></div>
@@ -5924,7 +6111,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
 .small-caption,
 .zh,
 .note {
-  overflow-wrap:anywhere;
+  overflow-wrap:break-word;
 }
 .report-panel {
   border-top:0 !important;
@@ -5950,6 +6137,16 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
 .grid-4 .metric,
 .home-metrics .metric {
   min-height:128px !important;
+}
+.model-kpis {
+  gap:20px !important;
+  align-items:stretch;
+}
+.model-kpis .metric {
+  min-height:150px !important;
+}
+.model-kpis .kpi-card-value {
+  font-size:clamp(2.25rem,2.9vw,2.95rem) !important;
 }
 .metric {
   display:flex;
@@ -6060,12 +6257,6 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
     radial-gradient(circle at 86% 15%,rgba(217,154,43,.16) 0 68px,transparent 69px),
     linear-gradient(136deg,#FFFFFF 0%,#F8FCF6 58%,#EEF7F1 100%) !important;
 }
-.home-decision-badge {
-  top:16px !important;
-  right:18px !important;
-  border-color:#F0D9A2 !important;
-  box-shadow:0 10px 22px rgba(108,74,16,.09) !important;
-}
 .botanical {
   min-height:230px !important;
   border-radius:22px !important;
@@ -6086,6 +6277,28 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
   box-shadow:var(--polish-shadow-soft) !important;
   background:#FFFFFF !important;
   padding:10px !important;
+}
+.holdout-chart-frame {
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:420px;
+  max-height:500px;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid var(--polish-line);
+  background:#FFFFFF;
+  box-shadow:var(--polish-shadow-soft);
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.holdout-img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:480px;
+  object-fit:contain;
 }
 .chart-title {
   padding:0 2px 8px !important;
@@ -6603,26 +6816,75 @@ button[role="tab"][aria-selected="true"] {
 }
 .shap-review-card {
   border:1px solid var(--polish-line);
-  border-radius:22px;
+  border-radius:24px;
   background:#FFFFFF;
   box-shadow:var(--polish-shadow);
-  padding:20px;
+  padding:28px 30px;
 }
 .shap-review-grid {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
+  grid-template-columns:repeat(3,minmax(300px,1fr));
+  gap:20px;
+  align-items:stretch;
 }
 .shap-mini-card {
-  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  min-height:218px;
+  border-radius:20px;
   border:1px solid var(--polish-line);
-  background:#F9FCF8;
-  padding:15px;
+  background:linear-gradient(180deg,#FFFFFF,#F7FCF6);
+  box-shadow:0 10px 24px rgba(10,41,26,.055);
+  padding:22px 24px;
 }
 .shap-mini-card .company-shap-label {
   display:flex;
-  gap:8px;
+  gap:10px;
   align-items:center;
+  color:#173D2A;
+  font-size:.88rem;
+  letter-spacing:.055em;
+  margin-bottom:14px;
+}
+.shap-mini-card .company-shap-label .label-icon {
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 30px;
+  width:30px;
+  height:30px;
+  border-radius:10px;
+  background:#EAF4EC;
+  border:1px solid #CFE4D2;
+  color:#1F6A43;
+  font-size:.8rem;
+  font-weight:950;
+  line-height:1;
+}
+.shap-mini-card .company-shap-text {
+  color:#25392F;
+  font-size:1.08rem;
+  line-height:1.58;
+  font-weight:780;
+}
+.shap-mini-card .zh {
+  margin-top:10px;
+  color:#5F7165;
+  font-size:1rem;
+  line-height:1.7;
+  font-weight:720;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  line-break:strict;
+}
+.company-shap-image-wrap {
+  padding:18px 20px;
+  overflow:visible;
+}
+.company-shap-image-wrap .shap-img {
+  height:540px !important;
+  max-height:540px !important;
+  object-fit:contain !important;
+  object-position:center !important;
 }
 
 [data-testid="stSidebar"] {
@@ -6692,6 +6954,13 @@ button[role="tab"][aria-selected="true"] {
   .risk-action-grid,
   .shap-review-grid {
     grid-template-columns:1fr !important;
+  }
+  .shap-review-card {
+    padding:20px !important;
+  }
+  .company-shap-image-wrap .shap-img {
+    height:480px !important;
+    max-height:480px !important;
   }
   .signal-value {
     text-align:left !important;
